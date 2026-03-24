@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rental Items | Atha Equipment Rental</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .rental-section { padding: 5rem 5%; }
+    .rental-section:nth-child(even) { background: var(--warm-gray); }
+    .rental-section:nth-child(odd)  { background: var(--warm-white); }
+
+    .rental-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .rental-inner.flip { direction: rtl; }
+    .rental-inner.flip > * { direction: ltr; }
+
+    .rental-img {
+      width: 100%; aspect-ratio: 16/10; border-radius: 8px;
+      object-fit: cover; background: #b8b0a0; display: block;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.12);
+    }
+    .rental-img-wrap { position: relative; }
+    .rental-tag {
+      position: absolute; top: 1rem; left: 1rem;
+      background: var(--red); color: var(--cream);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.3rem 0.8rem; border-radius: 3px;
+    }
+
+    .rental-text .section-body { margin-bottom: 1.4rem; }
+
+    .item-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 0.75rem; margin: 1.5rem 0 2rem;
+    }
+    .item-pill {
+      background: var(--warm-white);
+      border: 1.5px solid var(--border);
+      border-radius: 6px; padding: 0.8rem 1rem;
+      font-size: 0.88rem; font-weight: 500; color: var(--charcoal);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .item-pill .dot { color: var(--red); font-size: 1.1rem; line-height: 1; }
+
+    .rental-section:nth-child(even) .item-pill { background: var(--warm-white); }
+
+    @media (max-width: 820px) {
+      .rental-inner, .rental-inner.flip { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-eyebrow">Atha Equipment Rental</span>
+      <h1>Our <em>Rental Items</em></h1>
+      <p>Everything you need for your job site, yard, or event — well-maintained, competitively priced, and ready when you are.</p>
+    </div>
+  </div>
+
+  <!-- DUMPSTERS -->
+  <section id="dumpsters" class="rental-section">
+    <div class="rental-inner">
+      <div class="rental-img-wrap reveal">
+        <img class="rental-img" src="images/dumpster.jpg" alt="Dumpster Rentals"/>
+        <span class="rental-tag">Dumpsters</span>
+      </div>
+      <div class="rental-text reveal">
+        <p class="section-label">Roll-Off &amp; Residential</p>
+        <h2 class="section-title">Dumpster Rentals</h2>
+        <p class="section-body">Whether you're cleaning out a garage, remodeling a kitchen, or managing a full construction site, we have the right dumpster for the job. Flexible drop-off and pick-up scheduling — we work around your timeline.</p>
+        <div class="item-grid">
+          <div class="item-pill"><span class="dot">●</span> Small / Residential</div>
+          <div class="item-pill"><span class="dot">●</span> Mid-Size Roll-Off</div>
+          <div class="item-pill"><span class="dot">●</span> Large Construction</div>
+          <div class="item-pill"><span class="dot">●</span> Cleanout Rentals</div>
+          <div class="item-pill"><span class="dot">●</span> Renovation Debris</div>
+          <div class="item-pill"><span class="dot">●</span> Yard Waste</div>
+        </div>
+        <a href="contact.html" class="btn-primary">Request a Dumpster</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOILETS -->
+  <section id="toilets" class="rental-section">
+    <div class="rental-inner flip">
+      <div class="rental-img-wrap reveal">
+        <img class="rental-img" src="images/toilets.jpg" alt="Portable Toilets"/>
+        <span class="rental-tag">Portable Toilets</span>
+      </div>
+      <div class="rental-text reveal">
+        <p class="section-label">Portable Sanitation</p>
+        <h2 class="section-title">Toilets &amp; Holding Tanks</h2>
+        <p class="section-body">Clean, well-maintained portable toilets and holding tanks for any situation — from a weekend event to a months-long job site. We handle delivery, setup, and service so you don't have to worry about a thing.</p>
+        <div class="item-grid">
+          <div class="item-pill"><span class="dot">●</span> Standard Units</div>
+          <div class="item-pill"><span class="dot">●</span> Handicap Accessible</div>
+          <div class="item-pill"><span class="dot">●</span> Holding Tanks</div>
+          <div class="item-pill"><span class="dot">●</span> Event Rentals</div>
+          <div class="item-pill"><span class="dot">●</span> Construction Sites</div>
+          <div class="item-pill"><span class="dot">●</span> Short &amp; Long Term</div>
+        </div>
+        <a href="contact.html" class="btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEAVY EQUIPMENT -->
+  <section id="heavy-equipment" class="rental-section">
+    <div class="rental-inner">
+      <div class="rental-img-wrap reveal">
+        <img class="rental-img" src="images/equipment.jpg" alt="Heavy Equipment"/>
+        <span class="rental-tag">Heavy Equipment</span>
+      </div>
+      <div class="rental-text reveal">
+        <p class="section-label">Machines &amp; Power Tools</p>
+        <h2 class="section-title">Heavy Equipment</h2>
+        <p class="section-body">Get the power you need without the commitment of ownership. Our fleet of heavy equipment is well-maintained and ready to work. Not sure what you need? Our team is happy to walk you through the right choice for your project.</p>
+        <div class="item-grid">
+          <div class="item-pill"><span class="dot">●</span> Excavators</div>
+          <div class="item-pill"><span class="dot">●</span> Bulldozers</div>
+          <div class="item-pill"><span class="dot">●</span> Trenchers</div>
+          <div class="item-pill"><span class="dot">●</span> Skid Steers</div>
+          <div class="item-pill"><span class="dot">●</span> Wood Chippers</div>
+          <div class="item-pill"><span class="dot">●</span> Stump Grinders</div>
+          <div class="item-pill"><span class="dot">●</span> Tractors</div>
+          <div class="item-pill"><span class="dot">●</span> Trailers</div>
+        </div>
+        <a href="contact.html" class="btn-primary">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER -->
+  <section id="other" class="rental-section">
+    <div class="rental-inner flip">
+      <div class="rental-img-wrap reveal">
+        <img class="rental-img" src="images/other.jpg" alt="Other Equipment"/>
+        <span class="rental-tag">More Rentals</span>
+      </div>
+      <div class="rental-text reveal">
+        <p class="section-label">Flooring · Lawn · Party</p>
+        <h2 class="section-title">Other Equipment</h2>
+        <p class="section-body">From finishing a hardwood floor to throwing a backyard party, we have the tools and equipment to make it happen. Browse our wide selection of specialty and seasonal rental items.</p>
+        <div class="item-grid">
+          <div class="item-pill"><span class="dot">●</span> Floor Sanders</div>
+          <div class="item-pill"><span class="dot">●</span> Floor Buffers</div>
+          <div class="item-pill"><span class="dot">●</span> Tile Saws</div>
+          <div class="item-pill"><span class="dot">●</span> Aerators</div>
+          <div class="item-pill"><span class="dot">●</span> Tillers</div>
+          <div class="item-pill"><span class="dot">●</span> Lawn Rollers</div>
+          <div class="item-pill"><span class="dot">●</span> Tables &amp; Chairs</div>
+          <div class="item-pill"><span class="dot">●</span> Tents &amp; Canopies</div>
+          <div class="item-pill"><span class="dot">●</span> Pressure Washers</div>
+          <div class="item-pill"><span class="dot">●</span> Generators</div>
+        </div>
+        <a href="contact.html" class="btn-primary">Ask About Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:var(--cream);padding:4.5rem 5%;text-align:center;">
+    <div class="reveal">
+      <p class="section-label" style="text-align:center;">Need Something?</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--dark);margin-bottom:1rem;">Not Sure What You Need?</h2>
+      <p style="font-size:1.05rem;color:#5a4e3a;max-width:520px;margin:0 auto 2rem;line-height:1.7;">Just give us a call or send a message. We'll help you figure out the right equipment for your project — no pressure, no runaround.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">Contact Us</a>
+        <a href="tel:7702076041" class="btn-primary" style="background:var(--charcoal);">📞 (770) 207-6041</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="nav.js"></script>
+</body>
+</html>
