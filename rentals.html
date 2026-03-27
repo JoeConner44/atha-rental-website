@@ -222,12 +222,11 @@
 
     /* ── PARTY ── */
     .party-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
-    .party-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;text-align:center;transition:border-color .2s,box-shadow .2s;}
+    .party-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;padding:1.4rem 1.5rem;text-align:center;transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column;justify-content:center;gap:.4rem;}
     .party-card:hover{border-color:var(--red);box-shadow:0 4px 20px rgba(161,43,49,.1);}
-    .party-icon{font-size:2.2rem;margin-bottom:.6rem;}
-    .party-card-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:.5rem;}
+    .party-card-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);}
     .party-card-price{font-size:.9rem;color:var(--mid-gray);line-height:1.6;}
-    .party-card-price strong{color:var(--red);font-size:1.05rem;}
+    .party-card-price strong{color:var(--red);font-size:1.1rem;display:block;}
 
     /* ── CTA ── */
     .cta-band{background:var(--cream);padding:4.5rem 5%;text-align:center;margin-top:2rem;}
@@ -263,7 +262,7 @@
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="https://lirp.cdn-website.com/940f2b22/dms3rep/multi/opt/web_logo_number-235w.jpg" alt="Atha Rental"/>
+    <img src="logo.png" alt="Atha Rental"/>
   </a>
   <ul class="nav-links" id="navLinks">
     <li>
@@ -316,11 +315,11 @@
 <!-- STICKY TABS -->
 <div class="cat-tabs-wrap">
   <div class="cat-tabs">
-    <a class="cat-tab active" href="#dumpsters">🗑️ Dumpsters</a>
-    <a class="cat-tab" href="#heavy-equipment">🚜 Heavy Equipment</a>
-    <a class="cat-tab" href="#lawn-garden">🌿 Lawn &amp; Garden</a>
-    <a class="cat-tab" href="#other">🛠️ Other Equipment</a>
-    <a class="cat-tab" href="#party">🎉 Party Equipment</a>
+    <a class="cat-tab active" href="#dumpsters">Dumpsters</a>
+    <a class="cat-tab" href="#heavy-equipment">Heavy Equipment</a>
+    <a class="cat-tab" href="#lawn-garden">Lawn &amp; Garden</a>
+    <a class="cat-tab" href="#other">Other Equipment</a>
+    <a class="cat-tab" href="#party">Party Equipment</a>
   </div>
 </div>
 
@@ -330,7 +329,7 @@
   <div class="cat-section reveal" id="dumpsters">
     <div class="cat-header">
       <p class="cat-label">Roll-Off Rentals</p>
-      <h2 class="cat-title">🗑️ Dumpsters</h2>
+      <h2 class="cat-title">Dumpsters</h2>
       <p class="cat-desc">Delivered to your door, picked up when you're done. Perfect for cleanouts, renovations, landscaping, and construction.</p>
     </div>
     <div class="dumpster-grid">
@@ -388,7 +387,7 @@
   <div class="cat-section reveal" id="heavy-equipment">
     <div class="cat-header">
       <p class="cat-label">Machines &amp; Power Equipment</p>
-      <h2 class="cat-title">🚜 Heavy Equipment</h2>
+      <h2 class="cat-title">Heavy Equipment</h2>
       <p class="cat-desc">Well-maintained and ready to work. Click any photo to get a closer look. Not sure what you need? Just call us.</p>
     </div>
     <div class="equip-grid">
@@ -544,7 +543,7 @@
   <div class="cat-section reveal" id="lawn-garden">
     <div class="cat-header">
       <p class="cat-label">Outdoor &amp; Yard Work</p>
-      <h2 class="cat-title">🌿 Lawn &amp; Garden</h2>
+      <h2 class="cat-title">Lawn &amp; Garden</h2>
       <p class="cat-desc">Everything you need to get your yard in shape — from aerating and dethatching to tilling and blowing.</p>
     </div>
     <div class="equip-grid">
@@ -656,7 +655,7 @@
   <div class="cat-section reveal" id="other">
     <div class="cat-header">
       <p class="cat-label">Specialty &amp; General Use</p>
-      <h2 class="cat-title">🛠️ Other Equipment</h2>
+      <h2 class="cat-title">Other Equipment</h2>
       <p class="cat-desc">A wide variety of tools for construction, cleaning, digging, cutting, and more. If you don't see what you need, just call us.</p>
     </div>
     <div class="equip-grid">
@@ -710,18 +709,18 @@
   <div class="cat-section reveal" id="party">
     <div class="cat-header">
       <p class="cat-label">Events &amp; Celebrations</p>
-      <h2 class="cat-title">🎉 Party Equipment</h2>
+      <h2 class="cat-title">Party Equipment</h2>
       <p class="cat-desc">Everything you need for backyard parties, school events, community gatherings, and more.</p>
     </div>
     <div class="party-grid">
-      <div class="party-card"><div class="party-icon">💦</div><div class="party-card-name">Dunking Booth</div><div class="party-card-price"><strong>$175</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🪑</div><div class="party-card-name">Folding Chairs<br/><small style="font-size:.75rem;color:var(--mid-gray);">Black or White</small></div><div class="party-card-price"><strong>$1.25</strong>/chair<br/><span style="font-size:.8rem;">$1.00/chair (100+)</span></div></div>
-      <div class="party-card"><div class="party-icon">🔵</div><div class="party-card-name">60" Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">📏</div><div class="party-card-name">8ft Banquet Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🔘</div><div class="party-card-name">High-Top Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🍿</div><div class="party-card-name">Popcorn Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🍧</div><div class="party-card-name">Snow Cone Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🍭</div><div class="party-card-name">Cotton Candy Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">Dunking Booth</div><div class="party-card-price"><strong>$175</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">Folding Chairs<br/><small style="font-size:.75rem;color:var(--mid-gray);">Black or White</small></div><div class="party-card-price"><strong>$1.25</strong>/chair<br/><span style="font-size:.8rem;">$1.00/chair (100+)</span></div></div>
+      <div class="party-card"><div class="party-card-name">60" Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">8ft Banquet Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">High-Top Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">Popcorn Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">Snow Cone Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
+      <div class="party-card"><div class="party-card-name">Cotton Candy Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
     </div>
   </div>
 
@@ -741,7 +740,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="https://lirp.cdn-website.com/940f2b22/dms3rep/multi/opt/web_logo_number-235w.jpg" alt="Atha Rental"/>
+      <img src="logo.png" alt="Atha Rental"/>
       <p>Family-owned equipment rental serving Monroe, GA and the surrounding Georgia Piedmont since 2003.</p>
     </div>
     <div class="footer-col"><h5>Rental Items</h5><ul>
@@ -759,7 +758,7 @@
     </ul></div>
     <div class="footer-col"><h5>Contact</h5><ul>
       <li><a href="tel:7702076041">(770) 207-6041</a></li>
-      <li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#accdd8c4cdc9ddd9c5dcc1c9c2d8dec9c2d8cdc0ecd5cdc4c3c382cfc3c1">Email Us</a></li>
       <li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li>
     </ul></div>
   </div>
@@ -769,7 +768,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Hamburger ──
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('open');
@@ -856,10 +855,4 @@
   // Keyboard support
   document.addEventListener('keydown', e => {
     if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') showPhoto(current - 1);
-    if (e.key === 'ArrowRight') showPhoto(current + 1);
-  });
-</script>
-</body>
-</html>
+    if (e.key === 'Escape')
