@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rental Items & Pricing | Atha Equipment Rental</title>
+  <title>Atha Equipment Rental | Monroe, GA</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --red:#a12b31; --red-dark:#7d1f24; --red-light:#c23840;
-      --cream:#fcf8b3; --cream-dim:#f0ec9e;
-      --dark:#1c1008; --charcoal:#2e2318;
-      --warm-white:#fdfaf3; --warm-gray:#f4f0e6;
-      --mid-gray:#8a7f6e; --border:#e5dece; --nav-h:76px;
-    }
+    :root{--red:#a12b31;--red-dark:#7d1f24;--red-light:#c23840;--cream:#fcf8b3;--cream-dim:#f0ec9e;--dark:#1c1008;--charcoal:#2e2318;--warm-white:#fdfaf3;--warm-gray:#f4f0e6;--mid-gray:#8a7f6e;--border:#e5dece;--nav-h:76px;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);overflow-x:hidden;}
 
-    /* ── NAV ── */
+    /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-shadow:0 2px 24px rgba(0,0,0,.45);}
     .nav-logo img{height:50px;}
     .nav-links{display:flex;align-items:center;gap:.25rem;list-style:none;}
@@ -43,203 +37,104 @@
       .hamburger{display:flex;}
     }
 
-    /* ── PAGE HERO ── */
-    .page-hero{margin-top:var(--nav-h);background:var(--red-dark);padding:4rem 5% 3.5rem;position:relative;overflow:hidden;}
-    .page-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(0,0,0,.04) 40px,rgba(0,0,0,.04) 80px);}
-    .page-hero-inner{position:relative;z-index:1;max-width:780px;}
-    .page-eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);border:1px solid rgba(252,248,179,.4);padding:.3rem .9rem;border-radius:2px;margin-bottom:1rem;}
-    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:var(--warm-white);line-height:1.1;margin-bottom:.9rem;}
-    .page-hero h1 em{color:var(--cream);font-style:normal;}
-    .page-hero p{font-size:1.05rem;color:rgba(253,250,243,.75);line-height:1.7;max-width:580px;}
+    /* HERO */
+    #hero{margin-top:var(--nav-h);min-height:calc(100vh - var(--nav-h));position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 5%;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(135deg,#3b0a0d 0%,#1c1008 55%,#2e1a06 100%);}
+    .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;mix-blend-mode:luminosity;}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(28,16,8,.6) 0%,rgba(28,16,8,.3) 50%,rgba(28,16,8,.85) 100%);}
+    .hero-content{position:relative;z-index:1;}
+    .hero-eyebrow{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);border:1px solid rgba(252,248,179,.45);padding:.35rem 1rem;border-radius:2px;margin-bottom:1.4rem;opacity:0;animation:fadeUp .7s .2s forwards;}
+    #hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7vw,5.2rem);color:var(--warm-white);line-height:1.08;max-width:820px;opacity:0;animation:fadeUp .8s .45s forwards;}
+    #hero h1 em{color:var(--cream);font-style:normal;}
+    .hero-sub{margin-top:1.4rem;font-size:clamp(1rem,2vw,1.18rem);color:rgba(253,250,243,.72);max-width:560px;line-height:1.75;opacity:0;animation:fadeUp .8s .65s forwards;}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2.2rem;opacity:0;animation:fadeUp .8s .85s forwards;}
+    .hero-phone{margin-top:2.2rem;font-size:.9rem;color:rgba(192,180,158,.8);letter-spacing:.04em;opacity:0;animation:fadeUp .8s 1s forwards;}
+    .hero-phone a{color:var(--cream);text-decoration:none;font-weight:700;font-size:1.15rem;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
-    /* ── STICKY TABS ── */
-    .cat-tabs-wrap{position:sticky;top:var(--nav-h);z-index:100;background:var(--dark);border-bottom:2px solid rgba(252,248,179,.1);padding:0 5%;}
-    .cat-tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;max-width:1160px;margin:0 auto;}
-    .cat-tabs::-webkit-scrollbar{display:none;}
-    .cat-tab{display:flex;align-items:center;gap:.5rem;padding:1rem 1.4rem;font-size:.88rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#8a7f6e;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .2s,border-color .2s;}
-    .cat-tab:hover{color:var(--cream);}
-    .cat-tab.active{color:var(--cream);border-bottom-color:var(--cream);}
-
-    /* ── MAIN ── */
-    .rentals-main{max-width:1160px;margin:0 auto;padding:0 5%;}
-    .cat-section{padding:4rem 0 2rem;border-bottom:1px solid var(--border);}
-    .cat-section:last-child{border-bottom:none;}
-    .cat-label{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.4rem;}
-    .cat-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--dark);}
-    .cat-desc{font-size:.95rem;color:var(--mid-gray);margin-top:.5rem;line-height:1.6;max-width:560px;}
-    .cat-header{margin-bottom:2.5rem;}
-
-    /* ── EQUIPMENT CARD with LIGHTBOX TRIGGER ── */
-    .equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:1.5rem;}
-
-    .equip-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
-    .equip-card:hover{border-color:var(--red);box-shadow:0 4px 20px rgba(161,43,49,.1);}
-
-    /* Photo area — click to open lightbox */
-    .equip-photo{
-      width:100%; aspect-ratio:16/10;
-      background:var(--warm-gray);
-      position:relative; overflow:hidden;
-      cursor:pointer;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .equip-photo img{
-      width:100%; height:100%; object-fit:cover;
-      position:absolute; inset:0;
-      transition:transform .35s;
-    }
-    .equip-card:hover .equip-photo img{transform:scale(1.05);}
-
-    /* placeholder shown when no image yet */
-    .equip-photo .photo-placeholder{
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:.5rem; color:var(--mid-gray); font-size:.8rem; font-weight:600;
-      letter-spacing:.06em; text-transform:uppercase;
-      position:relative; z-index:1;
-      padding:1rem; text-align:center;
-    }
-    .equip-photo .photo-placeholder .ph-icon{font-size:2.4rem; opacity:.35;}
-
-    /* magnify overlay on hover */
-    .equip-photo .zoom-hint{
-      position:absolute; inset:0; z-index:2;
-      background:rgba(161,43,49,.0);
-      display:flex; align-items:center; justify-content:center;
-      opacity:0; transition:opacity .25s, background .25s;
-    }
-    .equip-photo:hover .zoom-hint{opacity:1; background:rgba(28,16,8,.45);}
-    .zoom-hint .zoom-icon{
-      width:48px; height:48px; border-radius:50%;
-      background:var(--cream); color:var(--dark);
-      display:flex; align-items:center; justify-content:center;
-      font-size:1.3rem;
-      box-shadow:0 4px 16px rgba(0,0,0,.3);
-      transform:scale(.8); transition:transform .2s;
-    }
-    .equip-photo:hover .zoom-icon{transform:scale(1);}
-
-    /* hide zoom hint when no real image */
-    .equip-photo.no-image .zoom-hint{display:none;}
-    .equip-photo.no-image{cursor:default;}
-
-    /* price section */
-    .equip-card-head{background:var(--warm-gray);padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--border);}
-    .equip-name{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);font-weight:700;}
-    .equip-badge{background:var(--red);color:var(--cream);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:3px;white-space:nowrap;flex-shrink:0;}
-    .equip-card-body{padding:1rem 1.4rem;}
-    .price-row{display:flex;align-items:center;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid var(--border);font-size:.9rem;}
-    .price-row:last-child{border-bottom:none;}
-    .price-label{color:var(--mid-gray);font-weight:500;}
-    .price-amt{font-weight:700;color:var(--dark);font-size:.95rem;}
-    .price-note{font-size:.78rem;color:#a09280;font-style:italic;margin-top:.3rem;}
-
-    /* ── LIGHTBOX ── */
-    #lightbox{
-      display:none; position:fixed; inset:0; z-index:1000;
-      background:rgba(10,5,2,.92);
-      align-items:center; justify-content:center;
-      padding:2rem;
-      animation:lbFadeIn .2s ease;
-    }
-    #lightbox.open{display:flex;}
-    @keyframes lbFadeIn{from{opacity:0}to{opacity:1}}
-
-    #lightbox img{
-      max-width:90vw; max-height:82vh;
-      object-fit:contain; border-radius:6px;
-      box-shadow:0 24px 80px rgba(0,0,0,.6);
-      animation:lbSlideUp .25s ease;
-    }
-    @keyframes lbSlideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-
-    .lb-caption{
-      position:fixed; bottom:2rem; left:50%; transform:translateX(-50%);
-      background:rgba(28,16,8,.85); color:var(--cream);
-      padding:.6rem 1.4rem; border-radius:100px;
-      font-size:.9rem; font-weight:600; white-space:nowrap;
-      letter-spacing:.02em;
-    }
-    .lb-close{
-      position:fixed; top:1.5rem; right:1.5rem;
-      width:44px; height:44px; border-radius:50%;
-      background:rgba(252,248,179,.15); border:1.5px solid rgba(252,248,179,.3);
-      color:var(--cream); font-size:1.3rem; line-height:1;
-      cursor:pointer; display:flex; align-items:center; justify-content:center;
-      transition:background .2s;
-    }
-    .lb-close:hover{background:var(--red); border-color:var(--red);}
-
-    /* prev / next arrows */
-    .lb-arrow{
-      position:fixed; top:50%; transform:translateY(-50%);
-      width:48px; height:48px; border-radius:50%;
-      background:rgba(252,248,179,.12); border:1.5px solid rgba(252,248,179,.2);
-      color:var(--cream); font-size:1.4rem;
-      cursor:pointer; display:flex; align-items:center; justify-content:center;
-      transition:background .2s; user-select:none;
-    }
-    .lb-arrow:hover{background:var(--red); border-color:var(--red);}
-    #lbPrev{left:1.5rem;}
-    #lbNext{right:1.5rem;}
-
-    /* ── DUMPSTER CARDS ── */
-    .dumpster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:1.5rem;}
-    .dumpster-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
-    .dumpster-card:hover{border-color:var(--red);box-shadow:0 4px 20px rgba(161,43,49,.1);}
-    .dumpster-top{background:var(--red);color:var(--cream);padding:1.4rem 1.5rem;text-align:center;}
-    .dumpster-top .size{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;line-height:1;}
-    .dumpster-top .size-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-top:.2rem;}
-    .dumpster-body{padding:1.4rem 1.5rem;}
-    .dumpster-price{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--dark);}
-    .dumpster-price-label{font-size:.78rem;color:var(--mid-gray);font-weight:500;margin-bottom:1rem;}
-    .dumpster-includes{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
-    .dumpster-includes li{font-size:.88rem;color:var(--charcoal);display:flex;align-items:center;gap:.5rem;}
-    .dumpster-includes li::before{content:'✓';color:var(--red);font-weight:700;}
-
-    /* ── DUMPSTER PHOTO ── */
-    .dumpster-photo{width:100%;aspect-ratio:16/10;background:var(--warm-gray);position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;}
-    .dumpster-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .35s;}
-    .dumpster-card:hover .dumpster-photo img{transform:scale(1.05);}
-    .dumpster-photo .photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--mid-gray);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;position:relative;z-index:1;padding:1rem;text-align:center;}
-    .dumpster-photo .photo-placeholder .ph-icon{font-size:2.4rem;opacity:.35;}
-    .dumpster-photo .zoom-hint{position:absolute;inset:0;z-index:2;background:rgba(161,43,49,.0);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s,background .25s;}
-    .dumpster-photo:hover .zoom-hint{opacity:1;background:rgba(28,16,8,.45);}
-
-    /* ── NOTICE BOX ── */
-    .notice-box{background:var(--cream);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:1.2rem 1.5rem;margin:1.5rem 0;}
-    .notice-box h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:.6rem;}
-    .notice-list{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
-    .notice-list li{font-size:.88rem;color:#5a4e3a;display:flex;align-items:center;gap:.5rem;}
-    .notice-list li::before{content:'⚠️';font-size:.8rem;}
-
-    /* ── ATTACHMENTS ── */
-    .sub-section-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);margin:2rem 0 .8rem;}
-    .sub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;margin-bottom:1rem;}
-    .sub-card{background:var(--warm-gray);border:1px solid var(--border);border-radius:8px;padding:.9rem 1.1rem;}
-    .sub-card-name{font-size:.88rem;font-weight:700;color:var(--dark);margin-bottom:.5rem;}
-    .sub-price-row{display:flex;justify-content:space-between;font-size:.82rem;padding:.2rem 0;color:var(--mid-gray);}
-    .sub-price-row span:last-child{font-weight:700;color:var(--charcoal);}
-
-    /* ── PARTY ── */
-    .party-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
-    .party-card{background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;text-align:center;transition:border-color .2s,box-shadow .2s;}
-    .party-card:hover{border-color:var(--red);box-shadow:0 4px 20px rgba(161,43,49,.1);}
-    .party-icon{font-size:2.2rem;margin-bottom:.6rem;}
-    .party-card-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:.5rem;}
-    .party-card-price{font-size:.9rem;color:var(--mid-gray);line-height:1.6;}
-    .party-card-price strong{color:var(--red);font-size:1.05rem;}
-
-    /* ── CTA ── */
-    .cta-band{background:var(--cream);padding:4.5rem 5%;text-align:center;margin-top:2rem;}
-    .cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--dark);margin-bottom:1rem;}
-    .cta-band p{font-size:1.05rem;color:#5a4e3a;max-width:500px;margin:0 auto 2rem;line-height:1.7;}
-    .btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-    .btn-primary{display:inline-block;background:var(--red);color:var(--cream);border:none;border-radius:5px;padding:.85rem 2rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;transition:background .2s;}
-    .btn-primary:hover{background:var(--red-light);}
-    .btn-dark{background:var(--charcoal);color:var(--warm-white);}
+    /* BUTTONS */
+    .btn-cream{display:inline-block;background:var(--cream);color:var(--dark);border:none;border-radius:5px;padding:.9rem 2.2rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-cream:hover{background:var(--cream-dim);transform:translateY(-2px);}
+    .btn-outline-cream{display:inline-block;background:transparent;color:var(--warm-white);border:1.5px solid rgba(252,248,179,.5);border-radius:5px;padding:.9rem 2.2rem;font-family:'DM Sans',sans-serif;font-weight:500;font-size:.95rem;text-decoration:none;transition:border-color .2s,background .2s;}
+    .btn-outline-cream:hover{border-color:var(--cream);background:rgba(252,248,179,.1);}
+    .btn-primary{display:inline-block;background:var(--red);color:var(--cream);border:none;border-radius:5px;padding:.9rem 2.2rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-primary:hover{background:var(--red-light);transform:translateY(-2px);}
+    .btn-dark{display:inline-block;background:var(--charcoal);color:var(--warm-white);border:none;border-radius:5px;padding:.9rem 2.2rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:background .2s;}
     .btn-dark:hover{background:var(--dark);}
 
-    /* ── FOOTER ── */
+    /* TRUST BAR */
+    .trust-bar{background:var(--charcoal);padding:1.1rem 5%;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+    .trust-item{display:flex;align-items:center;gap:.7rem;color:#c0b49e;font-size:.85rem;font-weight:500;}
+    .trust-line{width:4px;height:4px;border-radius:50%;background:var(--cream);flex-shrink:0;}
+
+    /* SECTIONS */
+    .section{padding:5.5rem 5%;}
+    .section-inner{max-width:1160px;margin:0 auto;}
+    .section-label{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--dark);line-height:1.15;margin-bottom:.9rem;}
+    .section-body{font-size:1.02rem;color:var(--mid-gray);line-height:1.78;max-width:600px;}
+
+    /* SERVICES */
+    #services{background:var(--warm-gray);}
+    .services-head{text-align:center;margin-bottom:3.5rem;}
+    .services-head .section-body{margin:.5rem auto 0;}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+    .svc-card{background:var(--warm-white);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 2px 14px rgba(0,0,0,.07);display:flex;flex-direction:column;border:1.5px solid transparent;transition:transform .22s,box-shadow .22s,border-color .22s;}
+    .svc-card:hover{transform:translateY(-5px);box-shadow:0 10px 32px rgba(161,43,49,.14);border-color:var(--red);}
+
+    /* icon area — shows your custom PNG, grey box if missing */
+    .svc-icon-wrap{width:100%;aspect-ratio:3/2;background:var(--warm-gray);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);overflow:hidden;}
+    .svc-icon-wrap img{width:100px;height:100px;object-fit:contain;transition:transform .3s;}
+    .svc-card:hover .svc-icon-wrap img{transform:scale(1.08);}
+    /* shown when icon image is missing — no emoji, just a subtle label */
+    .svc-icon-wrap .icon-placeholder{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#c0b49e;}
+
+    .svc-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;}
+    .svc-body h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);margin-bottom:.45rem;}
+    .svc-body p{font-size:.9rem;color:var(--mid-gray);line-height:1.65;flex:1;}
+    .svc-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;color:var(--red);font-weight:600;font-size:.88rem;}
+    .svc-link svg{transition:transform .2s;}
+    .svc-card:hover .svc-link svg{transform:translateX(4px);}
+
+    /* ABOUT */
+    #about{background:var(--warm-white);}
+    .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .about-img-block{position:relative;}
+    .about-img-main{width:100%;aspect-ratio:4/3;border-radius:10px;object-fit:cover;background:#c8bfad;display:block;box-shadow:0 6px 28px rgba(0,0,0,.12);}
+    .about-badge{position:absolute;bottom:-1.4rem;right:-1.4rem;background:var(--red);color:var(--cream);padding:1.3rem 1.6rem;border-radius:8px;text-align:center;box-shadow:0 4px 20px rgba(161,43,49,.4);}
+    .about-badge .num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;line-height:1;}
+    .about-badge .lbl{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem;opacity:.85;}
+    .about-text .section-body{margin-bottom:1.1rem;}
+    .check-list{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin:1.4rem 0 2rem;}
+    .check-list li{display:flex;align-items:center;gap:.7rem;font-size:.95rem;color:var(--charcoal);}
+    .chk{width:20px;height:20px;border-radius:50%;background:var(--red);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+
+    /* WHY — no emojis, left accent border instead */
+    #why{background:var(--red-dark);}
+    .why-head{text-align:center;margin-bottom:3.5rem;}
+    .why-head .section-label{color:rgba(252,248,179,.7);}
+    .why-head .section-title{color:var(--warm-white);}
+    .why-head .section-body{color:rgba(253,250,243,.55);margin:.5rem auto 0;}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
+    .why-card{background:rgba(0,0,0,.2);border:1px solid rgba(252,248,179,.1);border-left:3px solid var(--cream);border-radius:0 10px 10px 0;padding:2rem 1.8rem;transition:background .2s,border-color .2s;}
+    .why-card:hover{background:rgba(0,0,0,.32);}
+    .why-card h4{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--cream);margin-bottom:.5rem;}
+    .why-card p{font-size:.9rem;color:rgba(253,250,243,.5);line-height:1.65;}
+
+    /* AREAS */
+    #areas{background:var(--warm-gray);}
+    .areas-inner{text-align:center;}
+    .areas-inner .section-body{margin:.5rem auto 2.2rem;}
+    .areas-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;}
+    .area-tag{background:var(--warm-white);border:1.5px solid var(--border);border-radius:100px;padding:.5rem 1.3rem;font-size:.9rem;font-weight:500;color:var(--charcoal);}
+
+    /* CTA */
+    #cta{background:var(--cream);padding:5rem 5%;text-align:center;}
+    #cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--dark);margin-bottom:1rem;}
+    #cta p{font-size:1.05rem;color:#5a4e3a;max-width:520px;margin:0 auto 2rem;line-height:1.7;}
+    .btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
     footer{background:var(--dark);color:#7a6e5e;padding:4rem 5% 2rem;}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1160px;margin-inline:auto;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07);}
     .footer-brand img{height:46px;margin-bottom:1rem;}
@@ -251,28 +146,28 @@
     .footer-bottom{max-width:1160px;margin-inline:auto;padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.8rem;}
     .footer-bottom a{color:var(--cream);text-decoration:none;}
     @media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}}
-    @media(max-width:560px){.footer-top{grid-template-columns:1fr;}}
+    @media(max-width:560px){.footer-top{grid-template-columns:1fr;}.trust-bar{gap:1rem;}}
 
-    /* ── REVEAL ── */
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
     .reveal.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:860px){.about-wrap{grid-template-columns:1fr;gap:3.5rem;}.about-badge{bottom:1rem;right:1rem;}}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="https://lirp.cdn-website.com/940f2b22/dms3rep/multi/opt/web_logo_number-235w.jpg" alt="Atha Rental"/>
+    <img src="logo.png" alt="Atha Equipment Rental"/>
   </a>
   <ul class="nav-links" id="navLinks">
     <li>
       <a href="rentals.html">Rental Items <span class="arrow">▼</span></a>
       <div class="dropdown">
-        <a href="#dumpsters">Dumpsters</a>
-        <a href="#toilets">Toilets</a>
-        <a href="#heavy-equipment">Heavy Equipment</a>
-        <a href="#other">Other Equipment</a>
+        <a href="rentals.html#dumpsters">Dumpsters</a>
+        <a href="rentals.html#toilets">Toilets</a>
+        <a href="rentals.html#heavy-equipment">Heavy Equipment</a>
+        <a href="rentals.html#other">Other Equipment</a>
       </div>
     </li>
     <li><a href="contact.html">Contact Us</a></li>
@@ -295,472 +190,203 @@
   <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" role="dialog" aria-modal="true">
-  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-  <button class="lb-arrow" id="lbPrev" aria-label="Previous">‹</button>
-  <img id="lbImg" src="" alt=""/>
-  <button class="lb-arrow" id="lbNext" aria-label="Next">›</button>
-  <div class="lb-caption" id="lbCaption"></div>
-</div>
-
-<!-- HERO -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <span class="page-eyebrow">Atha Equipment Rental · Monroe, GA</span>
-    <h1>Rental Items &amp; <em>Pricing</em></h1>
-    <p>Transparent, fair pricing on everything we offer. Click any equipment photo to expand it. No surprises, no hidden fees.</p>
+<section id="hero">
+  <div class="hero-bg">
+    <img src="images/hero-bg.jpg" alt="Atha Equipment Rental"/>
   </div>
-</div>
-
-<!-- STICKY TABS -->
-<div class="cat-tabs-wrap">
-  <div class="cat-tabs">
-    <a class="cat-tab active" href="#dumpsters">🗑️ Dumpsters</a>
-    <a class="cat-tab" href="#heavy-equipment">🚜 Heavy Equipment</a>
-    <a class="cat-tab" href="#lawn-garden">🌿 Lawn &amp; Garden</a>
-    <a class="cat-tab" href="#other">🛠️ Other Equipment</a>
-    <a class="cat-tab" href="#party">🎉 Party Equipment</a>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Monroe, Georgia &nbsp;·&nbsp; Family Owned Since 2003</span>
+    <h1>Your <em>Trusted Local</em><br/>Rental Partner</h1>
+    <p class="hero-sub">From dumpsters and heavy equipment to party supplies and portable toilets — Atha Equipment Rental has everything you need, backed by friendly hometown service.</p>
+    <div class="hero-actions">
+      <a href="rentals.html" class="btn-cream">Browse Rentals &amp; Pricing</a>
+      <a href="contact.html" class="btn-outline-cream">Contact Us</a>
+    </div>
+    <p class="hero-phone">Call us today &nbsp;·&nbsp; <a href="tel:7702076041">(770) 207-6041</a></p>
   </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-line"></span>Family Owned &amp; Operated</div>
+  <div class="trust-item"><span class="trust-line"></span>Serving Georgia Since 2003</div>
+  <div class="trust-item"><span class="trust-line"></span>Friendly, Honest Service</div>
+  <div class="trust-item"><span class="trust-line"></span>Transparent Pricing</div>
 </div>
 
-<div class="rentals-main">
-
-  <!-- ═══ DUMPSTERS ═══ -->
-  <div class="cat-section reveal" id="dumpsters">
-    <div class="cat-header">
-      <p class="cat-label">Roll-Off Rentals</p>
-      <h2 class="cat-title">🗑️ Dumpsters</h2>
-      <p class="cat-desc">Delivered to your door, picked up when you're done. Perfect for cleanouts, renovations, landscaping, and construction.</p>
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="services-head reveal">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Rentals for Every Job &amp; Occasion</h2>
+      <p class="section-body">Whether you're tackling a home project, planning an event, or running a job site — we have the right equipment at a fair price.</p>
     </div>
-    <div class="dumpster-grid">
+    <div class="services-grid">
 
-      <div class="dumpster-card">
-        <!-- Photo: images/dumpster-20yd.jpg -->
-        <div class="dumpster-photo no-image" data-src="images/dumpster-20yd.jpg" data-caption="20 Yard Dumpster">
-          <img src="images/dumpster-20yd.jpg" alt="20 Yard Dumpster" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🗑️</span>Photo coming soon<br/>dumpster-20yd.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
+      <a href="rentals.html#dumpsters" class="svc-card reveal">
+        <div class="svc-icon-wrap">
+          <img src="icons/icon-dumpster.png" alt="Dumpster Rentals" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="icon-placeholder" style="display:none;">Add icon</span>
         </div>
-        <div class="dumpster-top"><div class="size">20</div><div class="size-label">Yard Dumpster</div></div>
-        <div class="dumpster-body">
-          <div class="dumpster-price">$450</div>
-          <div class="dumpster-price-label">Flat rate</div>
-          <ul class="dumpster-includes">
-            <li>Up to 2 tons included</li>
-            <li>Up to 20 days included</li>
-            <li>Great for home cleanouts &amp; small renos</li>
-          </ul>
+        <div class="svc-body">
+          <h3>Dumpster Rentals</h3>
+          <p>20 &amp; 30 yard roll-off dumpsters for cleanouts, renovations, and construction. Flat-rate pricing, flexible scheduling.</p>
+          <span class="svc-link">See Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
 
-      <div class="dumpster-card">
-        <!-- Photo: images/dumpster-30yd.jpg -->
-        <div class="dumpster-photo no-image" data-src="images/dumpster-30yd.jpg" data-caption="30 Yard Dumpster">
-          <img src="images/dumpster-30yd.jpg" alt="30 Yard Dumpster" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🗑️</span>Photo coming soon<br/>dumpster-30yd.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
+      <a href="rentals.html#toilets" class="svc-card reveal">
+        <div class="svc-icon-wrap">
+          <img src="icons/icon-toilet.png" alt="Portable Toilets" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="icon-placeholder" style="display:none;">Add icon</span>
         </div>
-        <div class="dumpster-top"><div class="size">30</div><div class="size-label">Yard Dumpster</div></div>
-        <div class="dumpster-body">
-          <div class="dumpster-price">$500</div>
-          <div class="dumpster-price-label">Flat rate</div>
-          <ul class="dumpster-includes">
-            <li>Up to 4 tons included</li>
-            <li>Up to 20 days included</li>
-            <li>Great for large projects &amp; job sites</li>
-          </ul>
+        <div class="svc-body">
+          <h3>Portable Toilets</h3>
+          <p>Clean, well-maintained units and holding tanks for job sites, events, and any outdoor gathering.</p>
+          <span class="svc-link">See Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
-      </div>
+      </a>
+
+      <a href="rentals.html#heavy-equipment" class="svc-card reveal">
+        <div class="svc-icon-wrap">
+          <img src="icons/icon-heavy-equipment.png" alt="Heavy Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="icon-placeholder" style="display:none;">Add icon</span>
+        </div>
+        <div class="svc-body">
+          <h3>Heavy Equipment</h3>
+          <p>Skid steers, excavators, lifts, chippers, and more. Half day, full day, and weekly rates available.</p>
+          <span class="svc-link">See Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="rentals.html#lawn-garden" class="svc-card reveal">
+        <div class="svc-icon-wrap">
+          <img src="icons/icon-lawn-garden.png" alt="Lawn and Garden" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="icon-placeholder" style="display:none;">Add icon</span>
+        </div>
+        <div class="svc-body">
+          <h3>Lawn &amp; Garden</h3>
+          <p>Aerators, tillers, dethatchers, sod cutters, blowers, and more to get your yard in shape.</p>
+          <span class="svc-link">See Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="rentals.html#other" class="svc-card reveal">
+        <div class="svc-icon-wrap">
+          <img src="icons/icon-other.png" alt="Other Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="icon-placeholder" style="display:none;">Add icon</span>
+        </div>
+        <div class="svc-body">
+          <h3>Other Equipment</h3>
+          <p>Pressure washers, pumps, saws, generators, tampers, drain cleaners, and much more.</p>
+          <span class="svc-link">See Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="rentals.html#party" class="svc-card reveal">
+        <div class="svc-icon-wrap">
+          <img src="icons/icon-party.png" alt="Party Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <span class="icon-placeholder" style="display:none;">Add icon</span>
+        </div>
+        <div class="svc-body">
+          <h3>Party Equipment</h3>
+          <p>Tables, chairs, dunking booths, popcorn machines, snow cone machines, and more for your event.</p>
+          <span class="svc-link">See Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
 
     </div>
-    <div class="notice-box">
-      <h4>⚠️ Extra Charge Notices</h4>
-      <ul class="notice-list">
-        <li>$10 per day over the 20-day rental period</li>
-        <li>$85 per ton over your included weight capacity</li>
-        <li>$50 additional fee for deliveries outside Walton County</li>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="section-inner about-wrap">
+    <div class="about-img-block reveal">
+      <img class="about-img-main" src="images/storefront.jpg" alt="Atha Rental storefront in Monroe, GA"/>
+      <div class="about-badge"><div class="num">20+</div><div class="lbl">Years in<br/>Business</div></div>
+    </div>
+    <div class="about-text reveal">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Hometown Roots,<br/>Reliable Service</h2>
+      <p class="section-body">Atha Equipment Rental has been a fixture of downtown Monroe, Georgia since 2003. As a family-owned and operated business, we're committed to real relationships — not just transactions.</p>
+      <p class="section-body">We listen carefully to what our customers need and take pride in delivering friendly, dependable service every single time.</p>
+      <ul class="check-list">
+        <li><span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fcf8b3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Well-maintained fleet, always ready to work</li>
+        <li><span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fcf8b3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Friendly staff who help you pick the right tool</li>
+        <li><span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fcf8b3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Transparent pricing — no surprises</li>
+        <li><span class="chk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fcf8b3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Proudly rooted in Walton County since 2003</li>
       </ul>
+      <a href="about.html" class="btn-primary">Meet the Team</a>
     </div>
   </div>
+</section>
 
-  <!-- ═══ HEAVY EQUIPMENT ═══ -->
-  <div class="cat-section reveal" id="heavy-equipment">
-    <div class="cat-header">
-      <p class="cat-label">Machines &amp; Power Equipment</p>
-      <h2 class="cat-title">🚜 Heavy Equipment</h2>
-      <p class="cat-desc">Well-maintained and ready to work. Click any photo to get a closer look. Not sure what you need? Just call us.</p>
+<section id="why" class="section">
+  <div class="section-inner">
+    <div class="why-head reveal">
+      <p class="section-label">Why Choose Atha</p>
+      <h2 class="section-title">The Atha Difference</h2>
+      <p class="section-body">We're not a big-box rental chain. We're your neighbors — and that makes all the difference.</p>
     </div>
-    <div class="equip-grid">
-
-      <!-- SKID STEER -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/skidsteer.jpg" data-caption="Skid Steer Loader (TL8)">
-          <img src="images/skidsteer.jpg" alt="Skid Steer" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🚜</span>Add photo<br/>skidsteer.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Skid Steer Loader (TL8)</div><span class="equip-badge">Popular</span></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day (4 hrs)</span><span class="price-amt">$275</span></div>
-          <div class="price-row"><span class="price-label">Full Day (8 hrs)</span><span class="price-amt">$400</span></div>
-          <div class="price-row"><span class="price-label">Weekly (32 hrs)</span><span class="price-amt">$1,500</span></div>
-          <div class="price-row"><span class="price-label">Over 8 hrs/day</span><span class="price-amt">$50/hr</span></div>
-        </div>
-      </div>
-
-      <!-- DINGO -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/dingo.jpg" data-caption="Walk Behind Dingo">
-          <img src="images/dingo.jpg" alt="Walk Behind Dingo" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🚜</span>Add photo<br/>dingo.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Walk Behind Dingo</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$175</span></div>
-          <div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$250</span></div>
-        </div>
-      </div>
-
-      <!-- MINI EXCAVATOR -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/miniexcavator.jpg" data-caption="Mini Excavator">
-          <img src="images/miniexcavator.jpg" alt="Mini Excavator" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🦺</span>Add photo<br/>miniexcavator.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Mini Excavator</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day (4 hrs)</span><span class="price-amt">$250</span></div>
-          <div class="price-row"><span class="price-label">Full Day (8 hrs)</span><span class="price-amt">$375</span></div>
-          <div class="price-row"><span class="price-label">Weekly (32 hrs)</span><span class="price-amt">$1,425</span></div>
-        </div>
-      </div>
-
-      <!-- SCISSOR LIFT -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/scissorlift.jpg" data-caption="Scissor Lift">
-          <img src="images/scissorlift.jpg" alt="Scissor Lift" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🏗️</span>Add photo<br/>scissorlift.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Scissor Lift</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">19' — Per Day</span><span class="price-amt">$145</span></div>
-          <div class="price-row"><span class="price-label">26' — Per Day</span><span class="price-amt">$175</span></div>
-        </div>
-      </div>
-
-      <!-- BUCKET LIFT -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/bucketlift.jpg" data-caption="Bucket Lift (35ft)">
-          <img src="images/bucketlift.jpg" alt="Bucket Lift" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🏗️</span>Add photo<br/>bucketlift.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Bucket Lift (35')</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$225</span></div>
-          <div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$325</span></div>
-        </div>
-      </div>
-
-      <!-- MATERIAL LIFT -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/materiallift.jpg" data-caption="Material Lift">
-          <img src="images/materiallift.jpg" alt="Material Lift" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🏗️</span>Add photo<br/>materiallift.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Material Lift</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$45</span></div>
-          <div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$75</span></div>
-        </div>
-      </div>
-
-      <!-- WOOD CHIPPER -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/woodchipper.jpg" data-caption="Wood Chipper (6 inch)">
-          <img src="images/woodchipper.jpg" alt="Wood Chipper" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🪵</span>Add photo<br/>woodchipper.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Wood Chipper (6")</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$125</span></div>
-          <div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$200</span></div>
-        </div>
-      </div>
-
-      <!-- LOG SPLITTER -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/logsplitter.jpg" data-caption="Log Splitter (22 Ton)">
-          <img src="images/logsplitter.jpg" alt="Log Splitter" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🪓</span>Add photo<br/>logsplitter.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Log Splitter (22 Ton)</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$60</span></div>
-          <div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$80</span></div>
-        </div>
-      </div>
-
-      <!-- CONCRETE BUGGY -->
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/concretebuggy.jpg" data-caption="Concrete Buggy">
-          <img src="images/concretebuggy.jpg" alt="Concrete Buggy" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🧱</span>Add photo<br/>concretebuggy.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Concrete Buggy</div></div>
-        <div class="equip-card-body">
-          <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$110</span></div>
-          <div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$180</span></div>
-        </div>
-      </div>
-
-    </div>
-
-    <h3 class="sub-section-title">Skid Steer Attachments</h3>
-    <div class="sub-grid">
-      <div class="sub-card"><div class="sub-card-name">🦾 Grappler</div><div class="sub-price-row"><span>Half Day</span><span>$125</span></div><div class="sub-price-row"><span>Full Day</span><span>$175</span></div></div>
-      <div class="sub-card"><div class="sub-card-name">🍴 Forks</div><div class="sub-price-row"><span>Half Day</span><span>$25</span></div><div class="sub-price-row"><span>Full Day</span><span>$40</span></div></div>
-      <div class="sub-card"><div class="sub-card-name">🌾 Harley Rake</div><div class="sub-price-row"><span>Half Day</span><span>$125</span></div><div class="sub-price-row"><span>Full Day</span><span>$175</span></div></div>
-      <div class="sub-card"><div class="sub-card-name">⛏️ Trencher</div><div class="sub-price-row"><span>Half Day</span><span>$125</span></div><div class="sub-price-row"><span>Full Day</span><span>$175</span></div></div>
-    </div>
-
-    <h3 class="sub-section-title">Walk Behind Dingo Attachments</h3>
-    <div class="sub-grid">
-      <div class="sub-card"><div class="sub-card-name">⛏️ Trencher</div><div class="sub-price-row"><span>Half Day</span><span>$50</span></div><div class="sub-price-row"><span>Full Day</span><span>$75</span></div></div>
-      <div class="sub-card"><div class="sub-card-name">🌾 Harley Rake</div><div class="sub-price-row"><span>Half Day</span><span>$80</span></div><div class="sub-price-row"><span>Full Day</span><span>$125</span></div></div>
-      <div class="sub-card"><div class="sub-card-name">🔩 Auger (8"–36")</div><div class="sub-price-row"><span>Half Day</span><span>$50</span></div><div class="sub-price-row"><span>Full Day</span><span>$75</span></div></div>
+    <div class="why-grid">
+      <div class="why-card reveal"><h4>Personal Service</h4><p>Talk to a real person who knows our inventory and genuinely wants to help your project succeed.</p></div>
+      <div class="why-card reveal"><h4>Maintained Equipment</h4><p>Every piece is regularly serviced so you can focus on the job, not troubleshooting a machine.</p></div>
+      <div class="why-card reveal"><h4>Locally Owned</h4><p>Your rental dollars stay right here in Monroe. We've been here 20+ years and we're not going anywhere.</p></div>
+      <div class="why-card reveal"><h4>Fair Pricing</h4><p>Transparent rates with half day, full day, and weekly options. Everything listed — no hidden fees.</p></div>
     </div>
   </div>
+</section>
 
-  <!-- ═══ LAWN & GARDEN ═══ -->
-  <div class="cat-section reveal" id="lawn-garden">
-    <div class="cat-header">
-      <p class="cat-label">Outdoor &amp; Yard Work</p>
-      <h2 class="cat-title">🌿 Lawn &amp; Garden</h2>
-      <p class="cat-desc">Everything you need to get your yard in shape — from aerating and dethatching to tilling and blowing.</p>
-    </div>
-    <div class="equip-grid">
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/sodcutter.jpg" data-caption="Sod Cutter">
-          <img src="images/sodcutter.jpg" alt="Sod Cutter" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>sodcutter.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Sod Cutter</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$55</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/coreaerator.jpg" data-caption="Core Aerator (Pull Behind)">
-          <img src="images/coreaerator.jpg" alt="Core Aerator" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>coreaerator.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Core Aerator (Pull Behind)</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$30</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$40</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/spikeaerator.jpg" data-caption="Spike Aerator (Pull Behind)">
-          <img src="images/spikeaerator.jpg" alt="Spike Aerator" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>spikeaerator.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Spike Aerator (Pull Behind)</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$30</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$40</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/sodroller.jpg" data-caption="Sod Roller (Pull Behind)">
-          <img src="images/sodroller.jpg" alt="Sod Roller" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>sodroller.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Sod Roller (Pull Behind)</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Per Day</span><span class="price-amt">$15</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/dethatcher-walk.jpg" data-caption="Dethatcher (Walk Behind)">
-          <img src="images/dethatcher-walk.jpg" alt="Dethatcher Walk Behind" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>dethatcher-walk.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Dethatcher (Walk Behind)</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$55</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/dethatcher-pull.jpg" data-caption="Dethatcher (Pull Behind)">
-          <img src="images/dethatcher-pull.jpg" alt="Dethatcher Pull Behind" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>dethatcher-pull.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Dethatcher (Pull Behind)</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/tiller-rear.jpg" data-caption="Rear Tine Tiller">
-          <img src="images/tiller-rear.jpg" alt="Rear Tine Tiller" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>tiller-rear.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Tiller — Rear Tine</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$65</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/tiller-mid.jpg" data-caption="Mid Tine Tiller">
-          <img src="images/tiller-mid.jpg" alt="Mid Tine Tiller" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">🌿</span>Add photo<br/>tiller-mid.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Tiller — Mid Tine</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$45</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$65</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/blower-parkinglot.jpg" data-caption="Parking Lot Blower">
-          <img src="images/blower-parkinglot.jpg" alt="Parking Lot Blower" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">💨</span>Add photo<br/>blower-parkinglot.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Blower — Parking Lot</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div>
-      </div>
-
-      <div class="equip-card">
-        <div class="equip-photo no-image" data-src="images/blower-backpack.jpg" data-caption="Backpack Blower">
-          <img src="images/blower-backpack.jpg" alt="Backpack Blower" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/>
-          <div class="photo-placeholder"><span class="ph-icon">💨</span>Add photo<br/>blower-backpack.jpg</div>
-          <div class="zoom-hint"><div class="zoom-icon">🔍</div></div>
-        </div>
-        <div class="equip-card-head"><div class="equip-name">Blower — Backpack</div></div>
-        <div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$15</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$25</span></div></div>
-      </div>
-
+<section id="areas" class="section">
+  <div class="section-inner areas-inner reveal">
+    <p class="section-label">Where We Serve</p>
+    <h2 class="section-title">Proudly Serving the Georgia Piedmont</h2>
+    <p class="section-body">Based in Monroe, we deliver and serve customers across Walton County and surrounding communities.</p>
+    <div class="areas-tags">
+      <span class="area-tag">Monroe, GA</span><span class="area-tag">Loganville</span>
+      <span class="area-tag">Social Circle</span><span class="area-tag">Covington</span>
+      <span class="area-tag">Oxford</span><span class="area-tag">Walton County</span>
+      <span class="area-tag">Newton County</span><span class="area-tag">Morgan County</span>
+      <span class="area-tag">Gwinnett County</span><span class="area-tag">Surrounding Areas</span>
     </div>
   </div>
+</section>
 
-  <!-- ═══ OTHER EQUIPMENT ═══ -->
-  <div class="cat-section reveal" id="other">
-    <div class="cat-header">
-      <p class="cat-label">Specialty &amp; General Use</p>
-      <h2 class="cat-title">🛠️ Other Equipment</h2>
-      <p class="cat-desc">A wide variety of tools for construction, cleaning, digging, cutting, and more. If you don't see what you need, just call us.</p>
-    </div>
-    <div class="equip-grid">
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/auger-oneman.jpg" data-caption="One Man Auger"><img src="images/auger-oneman.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🔩</span>Add photo<br/>auger-oneman.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">One Man Auger</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$75</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$125</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/auger-twoman.jpg" data-caption="Two Man Auger"><img src="images/auger-twoman.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🔩</span>Add photo<br/>auger-twoman.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Two Man Auger</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$65</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/trencher.jpg" data-caption="Walk Behind Trencher"><img src="images/trencher.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">⛏️</span>Add photo<br/>trencher.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Walk Behind Trencher</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$150</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$250</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/jackhammer.jpg" data-caption="Electric Jack Hammer"><img src="images/jackhammer.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🔨</span>Add photo<br/>jackhammer.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Electric Jack Hammer</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$40</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$60</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/lighttower.jpg" data-caption="Light Tower"><img src="images/lighttower.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💡</span>Add photo<br/>lighttower.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Light Tower</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Per Day</span><span class="price-amt">$95</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/generator.jpg" data-caption="Generator (3,000 Watt)"><img src="images/generator.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">⚡</span>Add photo<br/>generator.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Generator (3,000 Watt)</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$55</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/tamp.jpg" data-caption="Tamp"><img src="images/tamp.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🛠️</span>Add photo<br/>tamp.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Tamp</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/platetamp.jpg" data-caption="Plate Tamp"><img src="images/platetamp.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🛠️</span>Add photo<br/>platetamp.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Plate Tamp</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/dehumidifier.jpg" data-caption="Dehumidifier"><img src="images/dehumidifier.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💧</span>Add photo<br/>dehumidifier.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Dehumidifier</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$15</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$25</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/pressurewasher-2700.jpg" data-caption="Pressure Washer (2,700 PSI)"><img src="images/pressurewasher-2700.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💦</span>Add photo<br/>pressurewasher-2700.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Pressure Washer (2,700 PSI)</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/pressurewasher-4000.jpg" data-caption="Pressure Washer (4,000 PSI)"><img src="images/pressurewasher-4000.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💦</span>Add photo<br/>pressurewasher-4000.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Pressure Washer (4,000 PSI)</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$50</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$75</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/surfacecleaner.jpg" data-caption="Surface / Driveway Cleaner"><img src="images/surfacecleaner.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💦</span>Add photo<br/>surfacecleaner.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Surface / Driveway Cleaner</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$15</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$25</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/draincleaner-50.jpg" data-caption="Drain Cleaner — 50ft Manual"><img src="images/draincleaner-50.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🔧</span>Add photo<br/>draincleaner-50.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Drain Cleaner — 50ft Manual</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Per Day</span><span class="price-amt">$28</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/draincleaner-100.jpg" data-caption="Drain Cleaner — 100ft Electric"><img src="images/draincleaner-100.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🔧</span>Add photo<br/>draincleaner-100.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Drain Cleaner — 100ft Electric</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Per Day</span><span class="price-amt">$44</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/pump-1in.jpg" data-caption="1 Inch Submersible Pump"><img src="images/pump-1in.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💧</span>Add photo<br/>pump-1in.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">1" Submersible Pump</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$18</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$28</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/pump-2in.jpg" data-caption="2 Inch Submersible Pump"><img src="images/pump-2in.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💧</span>Add photo<br/>pump-2in.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">2" Submersible Pump</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/pump-3in.jpg" data-caption="3 Inch Trash Pump"><img src="images/pump-3in.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">💧</span>Add photo<br/>pump-3in.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">3" Trash Pump</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$50</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$75</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/bricksaw.jpg" data-caption="Brick Saw"><img src="images/bricksaw.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🪚</span>Add photo<br/>bricksaw.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Brick Saw</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$44</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$65</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/cutoffsaw.jpg" data-caption="Cut Off Saw"><img src="images/cutoffsaw.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🪚</span>Add photo<br/>cutoffsaw.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Cut Off Saw</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$40</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$65</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/tilesaw.jpg" data-caption="Tile Saw"><img src="images/tilesaw.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🪚</span>Add photo<br/>tilesaw.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Tile Saw</div></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$40</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$60</span></div></div></div>
-
-      <div class="equip-card"><div class="equip-photo no-image" data-src="images/tractorhitch.jpg" data-caption="Tractor Hitch Attachments"><img src="images/tractorhitch.jpg" alt="" onerror="this.parentElement.classList.add('no-image');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-icon">🚜</span>Add photo<br/>tractorhitch.jpg</div><div class="zoom-hint"><div class="zoom-icon">🔍</div></div></div><div class="equip-card-head"><div class="equip-name">Tractor Hitch Attachments</div><span class="equip-badge">3 Types</span></div><div class="equip-card-body"><div class="price-row"><span class="price-label">Rake / Box Blade / Pulverizer — Half Day</span><span class="price-amt">$35</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$50</span></div></div></div>
-
-    </div>
-  </div>
-
-  <!-- ═══ PARTY ═══ -->
-  <div class="cat-section reveal" id="party">
-    <div class="cat-header">
-      <p class="cat-label">Events &amp; Celebrations</p>
-      <h2 class="cat-title">🎉 Party Equipment</h2>
-      <p class="cat-desc">Everything you need for backyard parties, school events, community gatherings, and more.</p>
-    </div>
-    <div class="party-grid">
-      <div class="party-card"><div class="party-icon">💦</div><div class="party-card-name">Dunking Booth</div><div class="party-card-price"><strong>$175</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🪑</div><div class="party-card-name">Folding Chairs<br/><small style="font-size:.75rem;color:var(--mid-gray);">Black or White</small></div><div class="party-card-price"><strong>$1.25</strong>/chair<br/><span style="font-size:.8rem;">$1.00/chair (100+)</span></div></div>
-      <div class="party-card"><div class="party-icon">🔵</div><div class="party-card-name">60" Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">📏</div><div class="party-card-name">8ft Banquet Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🔘</div><div class="party-card-name">High-Top Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🍿</div><div class="party-card-name">Popcorn Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🍧</div><div class="party-card-name">Snow Cone Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-      <div class="party-card"><div class="party-icon">🍭</div><div class="party-card-name">Cotton Candy Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-    </div>
-  </div>
-
-</div><!-- end rentals-main -->
-
-<div class="cta-band">
+<section id="cta">
   <div class="reveal">
-    <h2>Don't See What You Need?</h2>
-    <p>Give us a call — we may have it, and if we don't, we'll point you in the right direction. That's just how we do things.</p>
+    <h2>Ready to Get Started?</h2>
+    <p>Give us a call or send a message — we'll help you find exactly what you need for your project or event.</p>
     <div class="btn-row">
       <a href="contact.html" class="btn-primary">Contact Us</a>
-      <a href="tel:7702076041" class="btn-primary btn-dark">📞 (770) 207-6041</a>
+      <a href="rentals.html" class="btn-dark">Browse All Rentals</a>
     </div>
   </div>
-</div>
+</section>
 
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="https://lirp.cdn-website.com/940f2b22/dms3rep/multi/opt/web_logo_number-235w.jpg" alt="Atha Rental"/>
-      <p>Family-owned equipment rental serving Monroe, GA and the surrounding Georgia Piedmont since 2003.</p>
+      <img src="logo.png" alt="Atha Rental"/>
+      <p>Family-owned equipment rental serving Monroe, GA and the surrounding Georgia Piedmont since 2003. Friendly service, fair prices — real neighbors.</p>
     </div>
     <div class="footer-col"><h5>Rental Items</h5><ul>
-      <li><a href="#dumpsters">Dumpsters</a></li>
-      <li><a href="#heavy-equipment">Heavy Equipment</a></li>
-      <li><a href="#lawn-garden">Lawn &amp; Garden</a></li>
-      <li><a href="#other">Other Equipment</a></li>
-      <li><a href="#party">Party Equipment</a></li>
+      <li><a href="rentals.html#dumpsters">Dumpsters</a></li>
+      <li><a href="rentals.html#toilets">Toilets</a></li>
+      <li><a href="rentals.html#heavy-equipment">Heavy Equipment</a></li>
+      <li><a href="rentals.html#lawn-garden">Lawn &amp; Garden</a></li>
+      <li><a href="rentals.html#other">Other Equipment</a></li>
+      <li><a href="rentals.html#party">Party Equipment</a></li>
     </ul></div>
     <div class="footer-col"><h5>Company</h5><ul>
       <li><a href="about.html#team">Our Team</a></li>
       <li><a href="about.html#mission">Our Mission</a></li>
       <li><a href="about.html#values">Our Values</a></li>
-      <li><a href="blog.html">Equipment 101</a></li>
+      <li><a href="blog.html">Equipment 101 Blog</a></li>
     </ul></div>
     <div class="footer-col"><h5>Contact</h5><ul>
       <li><a href="tel:7702076041">(770) 207-6041</a></li>
-      <li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li>
+      <li><a href="mailto:athaequipmentrental@yahoo.com">athaequipmentrental@yahoo.com</a></li>
       <li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li>
+      <li><a href="contact.html">Hours &amp; Location</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -770,96 +396,10 @@
 </footer>
 
 <script>
-  // ── Hamburger ──
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-
-  // ── Scroll reveal ──
-  const reveals = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.05 });
-  reveals.forEach(el => revealObserver.observe(el));
-
-  // ── Active tab on scroll ──
-  const sections = document.querySelectorAll('.cat-section');
-  const tabs = document.querySelectorAll('.cat-tab');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 140) current = sec.id; });
-    tabs.forEach(tab => {
-      tab.classList.remove('active');
-      if (tab.getAttribute('href') === '#' + current) tab.classList.add('active');
-    });
-  });
-
-  // ── LIGHTBOX ──
-  const lb        = document.getElementById('lightbox');
-  const lbImg     = document.getElementById('lbImg');
-  const lbCaption = document.getElementById('lbCaption');
-  const lbClose   = document.getElementById('lbClose');
-  const lbPrev    = document.getElementById('lbPrev');
-  const lbNext    = document.getElementById('lbNext');
-
-  // Collect all photo elements that have a real image (not no-image)
-  let photos = [];   // array of {src, caption}
-  let current = 0;
-
-  function buildPhotoList() {
-    photos = [];
-    document.querySelectorAll('.equip-photo:not(.no-image), .dumpster-photo:not(.no-image)').forEach(el => {
-      photos.push({ src: el.dataset.src, caption: el.dataset.caption });
-    });
-  }
-
-  function openLightbox(src, caption) {
-    buildPhotoList();
-    current = photos.findIndex(p => p.src === src);
-    if (current === -1) current = 0;
-    showPhoto(current);
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function showPhoto(index) {
-    if (!photos.length) return;
-    current = (index + photos.length) % photos.length;
-    lbImg.src = photos[current].src;
-    lbCaption.textContent = photos[current].caption;
-    // hide arrows if only one photo
-    lbPrev.style.display = photos.length > 1 ? 'flex' : 'none';
-    lbNext.style.display = photos.length > 1 ? 'flex' : 'none';
-  }
-
-  function closeLightbox() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-    lbImg.src = '';
-  }
-
-  // Attach click to all photo areas with real images
-  document.addEventListener('click', e => {
-    const photoEl = e.target.closest('.equip-photo:not(.no-image), .dumpster-photo:not(.no-image)');
-    if (photoEl) {
-      openLightbox(photoEl.dataset.src, photoEl.dataset.caption);
-    }
-  });
-
-  lbClose.addEventListener('click', closeLightbox);
-  lbPrev.addEventListener('click', e => { e.stopPropagation(); showPhoto(current - 1); });
-  lbNext.addEventListener('click', e => { e.stopPropagation(); showPhoto(current + 1); });
-
-  // Close on backdrop click
-  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
-
-  // Keyboard support
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') showPhoto(current - 1);
-    if (e.key === 'ArrowRight') showPhoto(current + 1);
-  });
+  document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
+  const reveals=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+  reveals.forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
