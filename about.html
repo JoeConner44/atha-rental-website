@@ -4,216 +4,296 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Atha Equipment Rental</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* ── MISSION ── */
-    #mission { background: var(--warm-white); padding: 5.5rem 5%; }
-    .mission-wrap {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: center;
-    }
-    .mission-img {
-      width: 100%; aspect-ratio: 4/3; border-radius: 8px;
-      object-fit: cover; background: #c0b59e; display: block;
-      box-shadow: 0 6px 28px rgba(0,0,0,0.1);
-    }
-    .mission-text .section-body { margin-bottom: 1rem; }
-    .stat-row { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-    .stat { text-align: center; }
-    .stat .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem; font-weight: 900;
-      color: var(--red); line-height: 1;
-    }
-    .stat .lbl { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-gray); margin-top: 0.3rem; }
+    :root{--red:#a12b31;--red-dark:#7d1f24;--red-light:#c23840;--cream:#fcf8b3;--cream-dim:#f0ec9e;--dark:#1c1008;--charcoal:#2e2318;--warm-white:#fdfaf3;--warm-gray:#f4f0e6;--mid-gray:#8a7f6e;--border:#e5dece;--nav-h:76px;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);overflow-x:hidden;}
 
-    /* ── TEAM ── */
-    #team { background: var(--warm-gray); padding: 5.5rem 5%; }
-    #team .inner { max-width: 1100px; margin: 0 auto; }
-    #team .head { margin-bottom: 3.5rem; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2rem; }
-    .team-card {
-      background: var(--warm-white); border-radius: 10px;
-      overflow: hidden; box-shadow: 0 2px 14px rgba(0,0,0,0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .team-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(161,43,49,0.12); }
-    .team-photo {
-      width: 100%; aspect-ratio: 1;
-      background: linear-gradient(135deg, #2e1a06, #a12b31);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4rem; overflow: hidden; position: relative;
-    }
-    .team-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-    .team-info { padding: 1.4rem 1.5rem 1.6rem; }
-    .team-info h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--dark); margin-bottom: 0.2rem; }
-    .team-info .role { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.65rem; }
-    .team-info p { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.65; }
-
-    /* placeholder team note */
-    .team-note {
-      background: var(--cream); border-radius: 8px; padding: 1.4rem 1.8rem;
-      margin-bottom: 2.5rem; font-size: 0.9rem; color: #5a4e3a;
-      border-left: 4px solid var(--red); line-height: 1.6;
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 5%;box-shadow:0 2px 24px rgba(0,0,0,.45);}
+    .nav-logo img{height:50px;}
+    .nav-links{display:flex;align-items:center;gap:.25rem;list-style:none;}
+    .nav-links>li{position:relative;}
+    .nav-links>li>a{display:flex;align-items:center;gap:.3rem;color:#d9cfc0;text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:.55rem .85rem;border-radius:4px;transition:color .2s,background .2s;white-space:nowrap;}
+    .nav-links>li>a:hover{color:var(--cream);background:rgba(252,248,179,.08);}
+    .nav-links>li>a .arrow{font-size:.6rem;transition:transform .2s;opacity:.6;}
+    .nav-links>li:hover>a .arrow{transform:rotate(180deg);}
+    .dropdown{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--dark);border:1px solid rgba(252,248,179,.12);border-radius:6px;min-width:190px;box-shadow:0 8px 32px rgba(0,0,0,.4);overflow:hidden;z-index:300;}
+    .nav-links>li:hover .dropdown{display:block;}
+    .dropdown a{display:block;padding:.75rem 1.2rem;color:#c5baa8;text-decoration:none;font-size:.88rem;font-weight:500;transition:background .15s,color .15s;border-bottom:1px solid rgba(255,255,255,.05);}
+    .dropdown a:last-child{border-bottom:none;}
+    .dropdown a:hover{background:var(--red);color:var(--cream);}
+    .nav-cta{background:var(--red)!important;color:var(--cream)!important;padding:.55rem 1.3rem!important;border-radius:4px!important;font-weight:600!important;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+    .hamburger span{width:26px;height:2px;background:#d9cfc0;border-radius:2px;}
+    @media(max-width:860px){
+      .nav-links{display:none;}
+      .nav-links.open{display:flex;flex-direction:column;align-items:flex-start;position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--dark);padding:1.5rem 5%;overflow-y:auto;z-index:199;}
+      .nav-links.open>li{width:100%;}
+      .nav-links.open>li>a{padding:.9rem 0;font-size:1rem;}
+      .dropdown{display:none!important;}
+      .hamburger{display:flex;}
     }
 
-    /* ── VALUES ── */
-    #values { background: var(--dark); padding: 5.5rem 5%; }
-    #values .inner { max-width: 1100px; margin: 0 auto; }
-    #values .section-label { color: var(--cream-dim); }
-    #values .section-title { color: var(--warm-white); }
-    #values .head { margin-bottom: 3.5rem; }
-    #values .head .section-body { color: rgba(253,250,243,0.55); }
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-    .value-card {
-      border-radius: 8px; padding: 2.2rem;
-      border: 1px solid rgba(252,248,179,0.1);
-      background: rgba(255,255,255,0.03);
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .value-card:hover { border-color: var(--cream); background: rgba(255,255,255,0.06); }
-    .value-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem; font-weight: 900;
-      color: rgba(252,248,179,0.12); line-height: 1;
-      margin-bottom: 0.8rem;
-    }
-    .value-card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 0.6rem; }
-    .value-card p { font-size: 0.9rem; color: rgba(253,250,243,0.5); line-height: 1.7; }
+    /* PAGE HERO */
+    .page-hero{margin-top:var(--nav-h);background:var(--red-dark);padding:4rem 5% 3.5rem;position:relative;overflow:hidden;}
+    .page-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(0,0,0,.04) 40px,rgba(0,0,0,.04) 80px);}
+    .page-hero-inner{position:relative;z-index:1;max-width:780px;}
+    .page-eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);border:1px solid rgba(252,248,179,.4);padding:.3rem .9rem;border-radius:2px;margin-bottom:1rem;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:var(--warm-white);line-height:1.1;margin-bottom:.9rem;}
+    .page-hero h1 em{color:var(--cream);font-style:normal;}
+    .page-hero p{font-size:1.05rem;color:rgba(253,250,243,.75);line-height:1.7;max-width:580px;}
 
-    @media (max-width: 820px) {
-      .mission-wrap { grid-template-columns: 1fr; gap: 3rem; }
-    }
+    /* SECTIONS */
+    .section{padding:5.5rem 5%;}
+    .section-inner{max-width:1100px;margin:0 auto;}
+    .section-label{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);color:var(--dark);line-height:1.15;margin-bottom:.9rem;}
+    .section-body{font-size:1.02rem;color:var(--mid-gray);line-height:1.78;max-width:600px;}
+
+    /* BUTTONS */
+    .btn-primary{display:inline-block;background:var(--red);color:var(--cream);border:none;border-radius:5px;padding:.9rem 2.2rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;transition:background .2s,transform .15s;}
+    .btn-primary:hover{background:var(--red-light);transform:translateY(-2px);}
+    .btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+    /* MISSION */
+    #mission{background:var(--warm-white);}
+    .mission-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .mission-img{width:100%;aspect-ratio:4/3;border-radius:8px;object-fit:cover;background:#c0b59e;display:block;box-shadow:0 6px 28px rgba(0,0,0,.1);}
+    .mission-text .section-body{margin-bottom:1rem;}
+    .stat-row{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap;}
+    .stat .num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--red);line-height:1;}
+    .stat .lbl{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mid-gray);margin-top:.3rem;}
+
+    /* TEAM */
+    #team{background:var(--warm-gray);}
+    .team-note{background:var(--cream);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:1.2rem 1.6rem;margin-bottom:2.5rem;font-size:.9rem;color:#5a4e3a;line-height:1.65;}
+    .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2rem;}
+    .team-card{background:var(--warm-white);border-radius:10px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.06);transition:transform .2s,box-shadow .2s;}
+    .team-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(161,43,49,.12);}
+    .team-photo{width:100%;aspect-ratio:1;background:linear-gradient(135deg,#2e1a06,#a12b31);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+    .team-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+    .team-photo-placeholder{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(252,248,179,.5);}
+    .team-info{padding:1.4rem 1.5rem 1.6rem;}
+    .team-info h3{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--dark);margin-bottom:.2rem;}
+    .team-role{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.65rem;}
+    .team-info p{font-size:.88rem;color:var(--mid-gray);line-height:1.65;}
+
+    /* VALUES */
+    #values{background:var(--dark);}
+    .values-head .section-label{color:rgba(252,248,179,.7);}
+    .values-head .section-title{color:var(--warm-white);}
+    .values-head .section-body{color:rgba(253,250,243,.55);margin-bottom:3rem;}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+    .value-card{border-radius:8px;padding:2.2rem;border:1px solid rgba(252,248,179,.1);background:rgba(255,255,255,.03);transition:border-color .2s,background .2s;}
+    .value-card:hover{border-color:var(--cream);background:rgba(255,255,255,.06);}
+    .value-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:rgba(252,248,179,.1);line-height:1;margin-bottom:.8rem;}
+    .value-card h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:.6rem;}
+    .value-card p{font-size:.9rem;color:rgba(253,250,243,.5);line-height:1.7;}
+
+    /* CTA BAND */
+    .cta-band{background:var(--cream);padding:4.5rem 5%;text-align:center;}
+    .cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--dark);margin-bottom:1rem;}
+    .cta-band p{font-size:1.05rem;color:#5a4e3a;max-width:500px;margin:0 auto 2rem;line-height:1.7;}
+
+    /* FOOTER */
+    footer{background:var(--dark);color:#7a6e5e;padding:4rem 5% 2rem;}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1160px;margin-inline:auto;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.07);}
+    .footer-brand img{height:46px;margin-bottom:1rem;}
+    .footer-brand p{font-size:.88rem;line-height:1.7;max-width:280px;}
+    .footer-col h5{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#a09280;margin-bottom:1rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+    .footer-col a{color:#7a6e5e;text-decoration:none;font-size:.88rem;transition:color .2s;}
+    .footer-col a:hover{color:var(--cream);}
+    .footer-bottom{max-width:1160px;margin-inline:auto;padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.8rem;}
+    .footer-bottom a{color:var(--cream);text-decoration:none;}
+    @media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}}
+    @media(max-width:560px){.footer-top{grid-template-columns:1fr;}}
+    @media(max-width:820px){.mission-wrap{grid-template-columns:1fr;gap:3rem;}}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
   </style>
 </head>
 <body>
-  <div id="nav-placeholder"></div>
 
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <span class="page-eyebrow">Monroe, Georgia · Since 2003</span>
-      <h1>About <em>Atha Rental</em></h1>
-      <p>We're a family business built on hard work, honest service, and deep roots in the Monroe community. Here's a little more about who we are.</p>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Atha Rental"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li>
+      <a href="rentals.html">Rental Items <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="rentals.html#dumpsters">Dumpsters</a>
+        <a href="rentals.html#toilets">Toilets &amp; Sanitation</a>
+        <a href="rentals.html#heavy-equipment">Heavy Equipment</a>
+        <a href="rentals.html#other">Other Equipment</a>
+      </div>
+    </li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li>
+      <a href="about.html">About Us <span class="arrow">▼</span></a>
+      <div class="dropdown">
+        <a href="#team">Our Team</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#values">Our Values</a>
+      </div>
+    </li>
+    <li>
+      <a href="blog.html">Learn More <span class="arrow">▼</span></a>
+      <div class="dropdown"><a href="blog.html">Equipment 101</a></div>
+    </li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow">Monroe, Georgia · Since 2003</span>
+    <h1>About <em>Atha Rental</em></h1>
+    <p>We're a family business built on hard work, honest service, and deep roots in the Monroe community.</p>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section id="mission" class="section">
+  <div class="section-inner mission-wrap">
+    <div class="reveal">
+      <img class="mission-img" src="images/storefront.jpg" alt="Atha Rental storefront"/>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Our Mission</p>
+      <h2 class="section-title">Built on Community,<br/>Driven by Service</h2>
+      <p class="section-body">Our mission is simple: be the most reliable, most helpful equipment rental company in the area. That means treating every customer like a neighbor — because in Monroe, they usually are.</p>
+      <p class="section-body" style="margin-top:.8rem;">Since 2003, we've been committed to making equipment rental easy, affordable, and genuinely pleasant. We stock what you need, keep it well-maintained, and make sure you leave confident and ready for the job.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num">20+</div><div class="lbl">Years in Business</div></div>
+        <div class="stat"><div class="num">500+</div><div class="lbl">Happy Customers</div></div>
+        <div class="stat"><div class="num">100+</div><div class="lbl">Pieces of Equipment</div></div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- MISSION -->
-  <section id="mission">
-    <div class="mission-wrap">
-      <div class="reveal">
-        <img class="mission-img" src="images/storefront.jpg" alt="Atha Rental storefront"/>
-      </div>
-      <div class="reveal">
-        <p class="section-label">Our Mission</p>
-        <h2 class="section-title">Built on Community,<br/>Driven by Service</h2>
-        <p class="section-body">Our mission is simple: be the most reliable, most helpful equipment rental company in Georgia. That means treating every customer like a neighbor — because in Monroe, they usually are.</p>
-        <p class="section-body">Since 2003, we've been committed to making equipment rental easy, affordable, and genuinely pleasant. We stock what you need, keep it well-maintained, and make sure you leave our lot confident and ready for the job.</p>
-        <div class="stat-row">
-          <div class="stat"><div class="num">20+</div><div class="lbl">Years in Business</div></div>
-          <div class="stat"><div class="num">500+</div><div class="lbl">Happy Customers</div></div>
-          <div class="stat"><div class="num">100+</div><div class="lbl">Pieces of Equipment</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  <section id="team">
-    <div class="inner">
-      <div class="head reveal">
-        <p class="section-label">The People Behind Atha</p>
-        <h2 class="section-title">Meet Our Team</h2>
-        <p class="section-body">We're real people who live and work in this community. When you come in, you'll be greeted by familiar faces who are genuinely glad to help.</p>
-      </div>
-      <div class="team-note">
-        📸 <strong>Add your team photos here!</strong> Replace the placeholder cards below with real photos and bios of your staff. Customers love putting a face to the name — it goes a long way toward building trust.
-      </div>
-      <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-photo">👤<img src="images/team-1.jpg" alt="Team Member"/></div>
-          <div class="team-info">
-            <h3>Owner / Founder</h3>
-            <div class="role">Atha Family</div>
-            <p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">👤<img src="images/team-2.jpg" alt="Team Member"/></div>
-          <div class="team-info">
-            <h3>Team Member Name</h3>
-            <div class="role">Your Title Here</div>
-            <p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p>
-          </div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">👤<img src="images/team-3.jpg" alt="Team Member"/></div>
-          <div class="team-info">
-            <h3>Team Member Name</h3>
-            <div class="role">Your Title Here</div>
-            <p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUES -->
-  <section id="values">
-    <div class="inner">
-      <div class="head reveal">
-        <p class="section-label">What We Stand For</p>
-        <h2 class="section-title">Our Values</h2>
-        <p class="section-body">These aren't just words on a wall — they're how we show up every single day for our customers and our community.</p>
-      </div>
-      <div class="values-grid">
-        <div class="value-card reveal">
-          <div class="value-num">01</div>
-          <h4>Integrity</h4>
-          <p>We're straightforward about pricing, availability, and what equipment is right for your job. No upselling, no runarounds — just honest advice you can count on.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">02</div>
-          <h4>Community First</h4>
-          <p>Monroe is home. We sponsor local events, support neighbors in need, and believe that a thriving local business makes for a thriving community.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">03</div>
-          <h4>Reliability</h4>
-          <p>When you rent from us, the equipment works. We maintain our fleet diligently so your project never gets derailed by a broken machine.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">04</div>
-          <h4>Friendliness</h4>
-          <p>We greet every customer with a smile and treat every interaction as an opportunity to make someone's day a little easier. That's just how we were raised.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">05</div>
-          <h4>Accessibility</h4>
-          <p>Great equipment shouldn't be out of reach. We price fairly, explain clearly, and work with customers who have questions or need guidance.</p>
-        </div>
-        <div class="value-card reveal">
-          <div class="value-num">06</div>
-          <h4>Family</h4>
-          <p>We're a family business and we treat our customers like family too. Relationships matter more to us than any single transaction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="background:var(--cream);padding:4.5rem 5%;text-align:center;">
+<!-- TEAM -->
+<section id="team" class="section">
+  <div class="section-inner">
     <div class="reveal">
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--dark);margin-bottom:1rem;">Come See Us in Monroe</h2>
-      <p style="font-size:1.05rem;color:#5a4e3a;max-width:500px;margin:0 auto 2rem;line-height:1.7;">Stop by the shop, give us a call, or send a message. We'd love to meet you.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn-primary">Contact Us</a>
-        <a href="tel:7702076041" class="btn-primary" style="background:var(--charcoal);">📞 (770) 207-6041</a>
+      <p class="section-label">The People Behind Atha</p>
+      <h2 class="section-title">Meet Our Team</h2>
+      <p class="section-body" style="margin-bottom:2rem;">We're real people who live and work in this community. When you come in, you'll be greeted by familiar faces who are genuinely glad to help.</p>
+    </div>
+    <div class="team-note reveal">
+      Add your team photos here — replace the placeholder cards below with real photos and bios of your staff. Customers love putting a face to the name.
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <span class="team-photo-placeholder">Add Photo</span>
+          <img src="images/team-1.jpg" alt="Team Member" onerror="this.style.display='none'"/>
+        </div>
+        <div class="team-info">
+          <h3>Owner / Founder</h3>
+          <div class="team-role">Atha Family</div>
+          <p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <span class="team-photo-placeholder">Add Photo</span>
+          <img src="images/team-2.jpg" alt="Team Member" onerror="this.style.display='none'"/>
+        </div>
+        <div class="team-info">
+          <h3>Team Member Name</h3>
+          <div class="team-role">Your Title Here</div>
+          <p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-photo">
+          <span class="team-photo-placeholder">Add Photo</span>
+          <img src="images/team-3.jpg" alt="Team Member" onerror="this.style.display='none'"/>
+        </div>
+        <div class="team-info">
+          <h3>Team Member Name</h3>
+          <div class="team-role">Your Title Here</div>
+          <p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div id="footer-placeholder"></div>
-  <script src="nav.js"></script>
+<!-- VALUES -->
+<section id="values" class="section">
+  <div class="section-inner">
+    <div class="values-head reveal">
+      <p class="section-label">What We Stand For</p>
+      <h2 class="section-title">Our Values</h2>
+      <p class="section-body">These aren't just words on a wall — they're how we show up every single day for our customers and our community.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal"><div class="value-num">01</div><h4>Integrity</h4><p>We're straightforward about pricing, availability, and what equipment is right for your job. No upselling, no runarounds — just honest advice you can count on.</p></div>
+      <div class="value-card reveal"><div class="value-num">02</div><h4>Community First</h4><p>Monroe is home. We believe a thriving local business makes for a thriving community, and we take that responsibility seriously.</p></div>
+      <div class="value-card reveal"><div class="value-num">03</div><h4>Reliability</h4><p>When you rent from us, the equipment works. We maintain our fleet diligently so your project never gets derailed by a broken machine.</p></div>
+      <div class="value-card reveal"><div class="value-num">04</div><h4>Friendliness</h4><p>We greet every customer with a smile and treat every interaction as an opportunity to make someone's day a little easier. That's just how we were raised.</p></div>
+      <div class="value-card reveal"><div class="value-num">05</div><h4>Accessibility</h4><p>Great equipment shouldn't be out of reach. We price fairly, explain clearly, and work with customers who have questions or need guidance.</p></div>
+      <div class="value-card reveal"><div class="value-num">06</div><h4>Family</h4><p>We're a family business and we treat our customers like family too. Relationships matter more to us than any single transaction.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="reveal">
+    <h2>Come See Us in Monroe</h2>
+    <p>Stop by the shop, give us a call, or send a message. We'd love to meet you.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+      <a href="tel:7702076041" class="btn-primary" style="background:var(--charcoal);">Call (770) 207-6041</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Atha Rental"/>
+      <p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p>
+    </div>
+    <div class="footer-col"><h5>Rental Items</h5><ul>
+      <li><a href="rentals.html#dumpsters">Dumpsters</a></li>
+      <li><a href="rentals.html#toilets">Toilets &amp; Sanitation</a></li>
+      <li><a href="rentals.html#heavy-equipment">Heavy Equipment</a></li>
+      <li><a href="rentals.html#lawn-garden">Lawn &amp; Garden</a></li>
+      <li><a href="rentals.html#other">Other Equipment</a></li>
+      <li><a href="rentals.html#party">Party Equipment</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Company</h5><ul>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="#mission">Our Mission</a></li>
+      <li><a href="#values">Our Values</a></li>
+      <li><a href="blog.html">Equipment 101</a></li>
+    </ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul>
+      <li><a href="tel:7702076041">(770) 207-6041</a></li>
+      <li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li>
+      <li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li>
+      <li><a href="contact.html">Hours &amp; Location</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Atha Equipment Rental. All rights reserved.</span>
+    <span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
+  const reveals=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+  reveals.forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
