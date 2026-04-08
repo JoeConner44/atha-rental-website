@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dumpster Rentals | Atha Equipment Rental | Monroe, GA</title>
+  <meta name="description" content="Roll-off dumpster rentals in Monroe, GA. 20 and 30 yard dumpsters for cleanouts, renovations, and construction. Flat-rate pricing, flexible scheduling."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../css/style.css"/>
+  <style>
+    .dumpster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .dumpster-card { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+    .dumpster-card:hover { border-color: var(--red); box-shadow: 0 4px 20px rgba(161,43,49,.1); }
+    .dumpster-top { background: var(--red); color: var(--cream); padding: 1.6rem; text-align: center; }
+    .dumpster-size { font-size: 3rem; font-weight: 900; line-height: 1; }
+    .dumpster-size-label { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .8; margin-top: .2rem; font-family: 'DM Sans', sans-serif; }
+    .dumpster-body { padding: 1.5rem; }
+    .dumpster-price { font-size: 2.2rem; font-weight: 900; color: var(--dark); line-height: 1; }
+    .dumpster-price-label { font-size: .78rem; color: var(--mid-gray); font-weight: 500; margin-bottom: 1.2rem; font-family: 'DM Sans', sans-serif; }
+    .dumpster-includes { list-style: none; display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.4rem; }
+    .dumpster-includes li { font-size: .9rem; color: var(--charcoal); display: flex; align-items: center; gap: .5rem; }
+    .dumpster-includes li::before { content: '✓'; color: var(--red); font-weight: 700; }
+    /* dimension diagram */
+    .dim-box { border: 2.5px solid var(--red); border-radius: 4px; position: relative; display: flex; align-items: center; justify-content: center; margin: 1rem 0 2rem; }
+    .dim-box span { font-size: 1rem; font-weight: 700; color: var(--dark); padding: 1rem; }
+    .dim-label-w { position: absolute; bottom: -1.6rem; left: 0; right: 0; text-align: center; font-size: .72rem; font-weight: 700; color: var(--red); letter-spacing: .06em; font-family: 'DM Sans', sans-serif; }
+    .dim-label-h { position: absolute; right: -3.2rem; top: 50%; transform: translateY(-50%); font-size: .72rem; font-weight: 700; color: var(--red); letter-spacing: .06em; white-space: nowrap; font-family: 'DM Sans', sans-serif; }
+  </style>
+</head>
+<body>
+<div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
+<nav>
+  <a href="/" class="nav-logo"><img src="../../images/logo.png" alt="Atha Equipment Rental"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/rentals/">Rental Items <span class="arrow">▼</span></a><div class="dropdown"><a href="/rentals/dumpsters/">Dumpsters</a><a href="/rentals/toilets/">Toilets &amp; Sanitation</a><a href="/rentals/heavy-equipment/">Heavy Equipment</a><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a><a href="/rentals/other/">Other Equipment</a><a href="/rentals/party/">Party Equipment</a></div></li>
+    <li><a href="/contact/">Contact Us</a></li>
+    <li><a href="/about/">About Us <span class="arrow">▼</span></a><div class="dropdown"><a href="/about/#team">Our Team</a><a href="/about/#mission">Our Mission</a><a href="/about/#values">Our Values</a></div></li>
+    <li><a href="/blog/">Learn More <span class="arrow">▼</span></a><div class="dropdown"><a href="/blog/">Equipment 101</a></div></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow"><a href="/rentals/" style="color:inherit;text-decoration:none;">Rental Items</a> · Dumpsters</span>
+    <h1><em>Dumpster</em> Rentals</h1>
+    <p>Roll-off dumpsters delivered to your door and picked up when you're done. Flat-rate pricing, flexible scheduling, no surprises.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="dumpster-grid">
+
+      <!-- 20 YD -->
+      <div class="dumpster-card reveal">
+        <div class="item-photo no-photo" data-src="../../images/dumpster-20yd.jpg" data-caption="20 Yard Dumpster">
+          <img src="../../images/dumpster-20yd.jpg" alt="20 Yard Dumpster" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dumpster-20yd.jpg</span></div>
+          <div class="zoom-hint"><div class="zoom-icon">View</div></div>
+        </div>
+        <div class="dumpster-top">
+          <div class="dumpster-size">20</div>
+          <div class="dumpster-size-label">Yard Dumpster</div>
+        </div>
+        <div class="dumpster-body">
+          <div class="dumpster-price">$450</div>
+          <div class="dumpster-price-label">Flat rate</div>
+          <ul class="dumpster-includes">
+            <li>Up to 2 tons included</li>
+            <li>Up to 20 days included</li>
+            <li>Great for home cleanouts &amp; small renos</li>
+          </ul>
+          <div style="padding-bottom:2rem;padding-right:3.5rem;margin-top:1rem;">
+            <div class="dim-box" style="height:60px;width:150px;">
+              <span>20 yd</span>
+              <div class="dim-label-w">22 ft long</div>
+              <div class="dim-label-h">8 ft wide</div>
+            </div>
+          </div>
+          <a href="/contact/" class="btn-red" style="display:block;text-align:center;">Request This Dumpster</a>
+        </div>
+      </div>
+
+      <!-- 30 YD -->
+      <div class="dumpster-card reveal">
+        <div class="item-photo no-photo" data-src="../../images/dumpster-30yd.jpg" data-caption="30 Yard Dumpster">
+          <img src="../../images/dumpster-30yd.jpg" alt="30 Yard Dumpster" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dumpster-30yd.jpg</span></div>
+          <div class="zoom-hint"><div class="zoom-icon">View</div></div>
+        </div>
+        <div class="dumpster-top">
+          <div class="dumpster-size">30</div>
+          <div class="dumpster-size-label">Yard Dumpster</div>
+        </div>
+        <div class="dumpster-body">
+          <div class="dumpster-price">$500</div>
+          <div class="dumpster-price-label">Flat rate</div>
+          <ul class="dumpster-includes">
+            <li>Up to 4 tons included</li>
+            <li>Up to 20 days included</li>
+            <li>Great for large projects &amp; job sites</li>
+          </ul>
+          <div style="padding-bottom:2rem;padding-right:3.5rem;margin-top:1rem;">
+            <div class="dim-box" style="height:60px;width:180px;">
+              <span>30 yd</span>
+              <div class="dim-label-w">22 ft long</div>
+              <div class="dim-label-h">8 ft wide</div>
+            </div>
+          </div>
+          <a href="/contact/" class="btn-red" style="display:block;text-align:center;">Request This Dumpster</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="notice-box reveal">
+      <h4>Extra Charge Notices</h4>
+      <ul class="notice-list">
+        <li>$10 per day over the 20-day rental period</li>
+        <li>$85 per ton over your included weight capacity</li>
+        <li>$50 additional fee for deliveries outside Walton County</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--cream);padding:4rem 5%;text-align:center;">
+  <div class="reveal">
+    <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--dark);margin-bottom:.8rem;">Ready to Book?</h2>
+    <p style="font-size:1rem;color:#5a4e3a;max-width:480px;margin:0 auto 1.8rem;line-height:1.7;">Give us a call or send a message and we'll get your dumpster scheduled.</p>
+    <div class="btn-row center"><a href="/contact/" class="btn-red">Contact Us</a><a href="tel:7702076041" class="btn-dark">Call (770) 207-6041</a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../../images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
+    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="/rentals/dumpsters/">Dumpsters</a></li><li><a href="/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="/rentals/other/">Other Equipment</a></li><li><a href="/rentals/party/">Party Equipment</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#mission">Our Mission</a></li><li><a href="/about/#values">Our Values</a></li><li><a href="/blog/">Equipment 101</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li><li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="/contact/">Hours &amp; Location</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Atha Equipment Rental. All rights reserved.</span><span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span></div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

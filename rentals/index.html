@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rental Items &amp; Pricing | Atha Equipment Rental</title>
+  <meta name="description" content="Browse all rental items and pricing at Atha Equipment Rental in Monroe, GA. Dumpsters, toilets, heavy equipment, lawn tools, and party rentals."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .cat-card {
+      background: var(--warm-white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: transform .22s, box-shadow .22s, border-color .22s;
+    }
+    .cat-card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(161,43,49,.14); border-color: var(--red); }
+    .cat-img {
+      width: 100%; aspect-ratio: 16/9;
+      background: var(--warm-gray);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .cat-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform .4s; }
+    .cat-card:hover .cat-img img { transform: scale(1.05); }
+    .cat-img-placeholder { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #c0b9a8; }
+    .cat-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .cat-body h3 { font-size: 1.3rem; color: var(--dark); margin-bottom: .5rem; }
+    .cat-body p { font-size: .92rem; color: var(--mid-gray); line-height: 1.65; flex: 1; }
+    .cat-link { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1rem; color: var(--red); font-weight: 600; font-size: .88rem; }
+    .cat-link svg { transition: transform .2s; }
+    .cat-card:hover .cat-link svg { transform: translateX(4px); }
+  </style>
+</head>
+<body>
+<div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
+<nav>
+  <a href="/" class="nav-logo"><img src="../images/logo.png" alt="Atha Equipment Rental"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/rentals/">Rental Items <span class="arrow">▼</span></a><div class="dropdown"><a href="/rentals/dumpsters/">Dumpsters</a><a href="/rentals/toilets/">Toilets &amp; Sanitation</a><a href="/rentals/heavy-equipment/">Heavy Equipment</a><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a><a href="/rentals/other/">Other Equipment</a><a href="/rentals/party/">Party Equipment</a></div></li>
+    <li><a href="/contact/">Contact Us</a></li>
+    <li><a href="/about/">About Us <span class="arrow">▼</span></a><div class="dropdown"><a href="/about/#team">Our Team</a><a href="/about/#mission">Our Mission</a><a href="/about/#values">Our Values</a></div></li>
+    <li><a href="/blog/">Learn More <span class="arrow">▼</span></a><div class="dropdown"><a href="/blog/">Equipment 101</a></div></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow">Atha Equipment Rental · Monroe, GA</span>
+    <h1>Rental Items &amp; <em>Pricing</em></h1>
+    <p>Transparent, fair pricing on everything we offer. No hidden fees — what you see is what you pay.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+      <p class="section-label">Browse by Category</p>
+      <h2 class="section-title">What Do You Need?</h2>
+      <p class="section-body" style="margin:0.5rem auto 0;">Click any category below to see the full list of equipment and pricing.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="/rentals/dumpsters/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — dumpsters.jpg</span><img src="../images/dumpsters.jpg" alt="Dumpsters" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Dumpsters</h3><p>20 &amp; 30 yard roll-off dumpsters for cleanouts, renovations, and construction. Flat-rate pricing.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="/rentals/toilets/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — toilets.jpg</span><img src="../images/toilets.jpg" alt="Toilets" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Toilets &amp; Sanitation</h3><p>Portable toilets, holding tanks, and hand washing stations for job sites and events.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="/rentals/heavy-equipment/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — heavy-equipment.jpg</span><img src="../images/heavy-equipment.jpg" alt="Heavy Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Heavy Equipment</h3><p>Skid steers, excavators, lifts, log splitters, concrete buggies, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="/rentals/lawn-garden/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — lawn-garden.jpg</span><img src="../images/lawn-garden.jpg" alt="Lawn and Garden" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Lawn &amp; Garden</h3><p>Walk behind aerators, tillers, dethatchers, sod rollers, and blowers.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="/rentals/other/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — other.jpg</span><img src="../images/other.jpg" alt="Other Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Other Equipment</h3><p>Pressure washers, pumps, saws, generators, tampers, drain cleaners, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="/rentals/party/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — party.jpg</span><img src="../images/party.jpg" alt="Party Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Party Equipment</h3><p>Tables, chairs, dunking booths, popcorn machines, snow cone machines, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--cream);padding:4rem 5%;text-align:center;">
+  <div class="reveal">
+    <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--dark);margin-bottom:.8rem;">Not Sure What You Need?</h2>
+    <p style="font-size:1rem;color:#5a4e3a;max-width:480px;margin:0 auto 1.8rem;line-height:1.7;">Just give us a call — we'll help you figure out the right equipment for your job. That's what we're here for.</p>
+    <div class="btn-row center"><a href="/contact/" class="btn-red">Contact Us</a><a href="tel:7702076041" class="btn-dark">Call (770) 207-6041</a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
+    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="/rentals/dumpsters/">Dumpsters</a></li><li><a href="/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="/rentals/other/">Other Equipment</a></li><li><a href="/rentals/party/">Party Equipment</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#mission">Our Mission</a></li><li><a href="/about/#values">Our Values</a></li><li><a href="/blog/">Equipment 101</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li><li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="/contact/">Hours &amp; Location</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Atha Equipment Rental. All rights reserved.</span><span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span></div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

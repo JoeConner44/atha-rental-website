@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Atha Equipment Rental | Monroe, GA</title>
+  <meta name="description" content="Family-owned equipment rental in Monroe, GA since 2003. Learn about our team, our mission, and our values."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    #mission { background: var(--warm-white); }
+    .mission-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .mission-img { width: 100%; aspect-ratio: 4/3; border-radius: 8px; object-fit: cover; background: #c0b59e; display: block; box-shadow: 0 6px 28px rgba(0,0,0,.1); }
+    .stat-row { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+    .stat .num { font-size: 2.8rem; font-weight: 900; color: var(--red); line-height: 1; }
+    .stat .lbl { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--mid-gray); margin-top: .3rem; font-family: 'DM Sans', sans-serif; }
+    #team { background: var(--warm-gray); }
+    .team-note { background: var(--cream); border-left: 4px solid var(--red); border-radius: 0 8px 8px 0; padding: 1.2rem 1.6rem; margin-bottom: 2.5rem; font-size: .9rem; color: #5a4e3a; line-height: 1.65; font-family: 'DM Sans', sans-serif; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2rem; }
+    .team-card { background: var(--warm-white); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 14px rgba(0,0,0,.06); transition: transform .2s, box-shadow .2s; }
+    .team-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(161,43,49,.12); }
+    .team-photo { width: 100%; aspect-ratio: 1; background: linear-gradient(135deg,#2e1a06,#a12b31); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .team-photo-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(252,248,179,.45); font-family: 'DM Sans', sans-serif; }
+    .team-info { padding: 1.4rem 1.5rem 1.6rem; }
+    .team-info h3 { font-size: 1.15rem; color: var(--dark); margin-bottom: .2rem; }
+    .team-role { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--red); margin-bottom: .65rem; font-family: 'DM Sans', sans-serif; }
+    .team-info p { font-size: .88rem; color: var(--mid-gray); line-height: 1.65; font-family: 'DM Sans', sans-serif; }
+    #values { background: var(--dark); }
+    .values-head .section-label { color: rgba(252,248,179,.7); }
+    .values-head .section-title { color: var(--warm-white); }
+    .values-head .section-body { color: rgba(253,250,243,.55); margin-bottom: 3rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .value-card { border-radius: 8px; padding: 2.2rem; border: 1px solid rgba(252,248,179,.1); background: rgba(255,255,255,.03); transition: border-color .2s, background .2s; }
+    .value-card:hover { border-color: var(--cream); background: rgba(255,255,255,.06); }
+    .value-num { font-size: 3rem; font-weight: 900; color: rgba(252,248,179,.1); line-height: 1; margin-bottom: .8rem; }
+    .value-card h4 { font-size: 1.2rem; color: var(--cream); margin-bottom: .6rem; }
+    .value-card p { font-size: .9rem; color: rgba(253,250,243,.5); line-height: 1.7; font-family: 'DM Sans', sans-serif; }
+    @media (max-width: 820px) { .mission-wrap { grid-template-columns: 1fr; gap: 3rem; } }
+  </style>
+</head>
+<body>
+<div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
+<nav>
+  <a href="/" class="nav-logo"><img src="../images/logo.png" alt="Atha Equipment Rental"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/rentals/">Rental Items <span class="arrow">▼</span></a><div class="dropdown"><a href="/rentals/dumpsters/">Dumpsters</a><a href="/rentals/toilets/">Toilets &amp; Sanitation</a><a href="/rentals/heavy-equipment/">Heavy Equipment</a><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a><a href="/rentals/other/">Other Equipment</a><a href="/rentals/party/">Party Equipment</a></div></li>
+    <li><a href="/contact/">Contact Us</a></li>
+    <li><a href="/about/">About Us <span class="arrow">▼</span></a><div class="dropdown"><a href="/about/#team">Our Team</a><a href="/about/#mission">Our Mission</a><a href="/about/#values">Our Values</a></div></li>
+    <li><a href="/blog/">Learn More <span class="arrow">▼</span></a><div class="dropdown"><a href="/blog/">Equipment 101</a></div></li>
+    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow">Monroe, Georgia · Since 2003</span>
+    <h1>About <em>Atha Rental</em></h1>
+    <p>A family business built on hard work, honest service, and deep roots in the Monroe community.</p>
+  </div>
+</div>
+
+<section id="mission" class="section">
+  <div class="section-inner mission-wrap">
+    <div class="reveal"><img class="mission-img" src="../images/storefront.jpg" alt="Atha Rental storefront"/></div>
+    <div class="reveal">
+      <p class="section-label">Our Mission</p>
+      <h2 class="section-title">Built on Community,<br/>Driven by Service</h2>
+      <p class="section-body">Our mission is simple: be the most reliable, most helpful equipment rental company in the area. That means treating every customer like a neighbor — because in Monroe, they usually are.</p>
+      <p class="section-body" style="margin-top:.8rem;">Since 2003, we've been committed to making equipment rental easy, affordable, and genuinely pleasant. We stock what you need, keep it well-maintained, and make sure you leave confident and ready for the job.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num">20+</div><div class="lbl">Years in Business</div></div>
+        <div class="stat"><div class="num">500+</div><div class="lbl">Happy Customers</div></div>
+        <div class="stat"><div class="num">100+</div><div class="lbl">Pieces of Equipment</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">The People Behind Atha</p>
+      <h2 class="section-title">Meet Our Team</h2>
+      <p class="section-body" style="margin-bottom:2rem;">We're real people who live and work in this community. When you come in, you'll be greeted by familiar faces who are genuinely glad to help.</p>
+    </div>
+    <div class="team-note reveal">Add your team photos here — replace the cards below with real photos and bios of your staff. Customers love putting a face to the name.</div>
+    <div class="team-grid">
+      <div class="team-card reveal"><div class="team-photo"><span class="team-photo-label">Add Photo</span><img src="../images/team-1.jpg" alt="" onerror="this.style.display='none'"/></div><div class="team-info"><h3>Owner / Founder</h3><div class="team-role">Atha Family</div><p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p></div></div>
+      <div class="team-card reveal"><div class="team-photo"><span class="team-photo-label">Add Photo</span><img src="../images/team-2.jpg" alt="" onerror="this.style.display='none'"/></div><div class="team-info"><h3>Team Member Name</h3><div class="team-role">Your Title Here</div><p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p></div></div>
+      <div class="team-card reveal"><div class="team-photo"><span class="team-photo-label">Add Photo</span><img src="../images/team-3.jpg" alt="" onerror="this.style.display='none'"/></div><div class="team-info"><h3>Team Member Name</h3><div class="team-role">Your Title Here</div><p>Add a short bio here — where they're from, how long they've been with the business, and what they love about serving the Monroe community.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="values" class="section">
+  <div class="section-inner">
+    <div class="values-head reveal">
+      <p class="section-label">What We Stand For</p>
+      <h2 class="section-title">Our Values</h2>
+      <p class="section-body">These aren't just words on a wall — they're how we show up every single day for our customers and our community.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal"><div class="value-num">01</div><h4>Integrity</h4><p>Straightforward about pricing, availability, and what's right for your job. No upselling, no runarounds — just honest advice.</p></div>
+      <div class="value-card reveal"><div class="value-num">02</div><h4>Community First</h4><p>Monroe is home. We believe a thriving local business makes for a thriving community, and we take that seriously.</p></div>
+      <div class="value-card reveal"><div class="value-num">03</div><h4>Reliability</h4><p>When you rent from us, the equipment works. We maintain our fleet diligently so your project stays on track.</p></div>
+      <div class="value-card reveal"><div class="value-num">04</div><h4>Friendliness</h4><p>We greet every customer with a smile. Every interaction is an opportunity to make someone's day a little easier.</p></div>
+      <div class="value-card reveal"><div class="value-num">05</div><h4>Accessibility</h4><p>Great equipment shouldn't be out of reach. We price fairly, explain clearly, and work with every customer.</p></div>
+      <div class="value-card reveal"><div class="value-num">06</div><h4>Family</h4><p>We're a family business and we treat our customers like family. Relationships matter more than any single transaction.</p></div>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--cream);padding:4.5rem 5%;text-align:center;"><div class="reveal"><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--dark);margin-bottom:.8rem;">Come See Us in Monroe</h2><p style="font-size:1rem;color:#5a4e3a;max-width:480px;margin:0 auto 1.8rem;line-height:1.7;">Stop by the shop, give us a call, or send a message. We'd love to meet you.</p><div class="btn-row" style="justify-content:center;"><a href="/contact/" class="btn-red">Contact Us</a><a href="tel:7702076041" class="btn-dark">Call (770) 207-6041</a></div></div></div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><img src="../images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
+    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="/rentals/dumpsters/">Dumpsters</a></li><li><a href="/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="/rentals/other/">Other Equipment</a></li><li><a href="/rentals/party/">Party Equipment</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#mission">Our Mission</a></li><li><a href="/about/#values">Our Values</a></li><li><a href="/blog/">Equipment 101</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li><li><a href="https://goo.gl/maps/4B25ZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="/contact/">Hours &amp; Location</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Atha Equipment Rental. All rights reserved.</span><span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span></div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
