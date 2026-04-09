@@ -1,32 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/atha-rental-website/">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lawn &amp; Garden Equipment Rentals | Atha Equipment Rental</title>
   <meta name="description" content="Lawn and garden equipment rentals in Monroe, GA. Aerators, tillers, dethatchers, blowers, and more. Serving Walton County since 2003."/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../css/style.css"/>
+  <style>
+/* ============================================================
+   ATHA EQUIPMENT RENTAL — Global Stylesheet
+   atharental.com
+   ============================================================ */
+
+/* ── TOKENS ── */
+:root {
+  --red:         #a12b31;
+  --red-dark:    #7d1f24;
+  --red-light:   #c23840;
+  --cream:       #fcf8b3;
+  --cream-dim:   #f0ec9e;
+  --dark:        #1c1008;
+  --charcoal:    #2e2318;
+  --warm-white:  #fdfaf3;
+  --warm-gray:   #f4f0e6;
+  --mid-gray:    #8a7f6e;
+  --border:      #e5dece;
+  --nav-h:       76px;
+  --max-w:       1160px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--warm-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: var(--nav-h);
+  background: var(--dark);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  box-shadow: 0 2px 24px rgba(0,0,0,.45);
+}
+.nav-logo img { height: 50px; }
+.nav-links { display: flex; align-items: center; gap: .25rem; list-style: none; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  display: flex; align-items: center; gap: .3rem;
+  color: #d9cfc0; text-decoration: none;
+  font-size: .88rem; font-weight: 500;
+  letter-spacing: .04em; text-transform: uppercase;
+  padding: .55rem .85rem; border-radius: 4px;
+  transition: color .2s, background .2s; white-space: nowrap;
+}
+.nav-links > li > a:hover { color: var(--cream); background: rgba(252,248,179,.08); }
+.nav-links > li > a .arrow { font-size: .6rem; transition: transform .2s; opacity: .6; }
+.nav-links > li:hover > a .arrow { transform: rotate(180deg); }
+.dropdown {
+  display: none; position: absolute; top: calc(100% + 4px); left: 0;
+  background: var(--dark); border: 1px solid rgba(252,248,179,.12);
+  border-radius: 6px; min-width: 200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4); overflow: hidden; z-index: 300;
+}
+.nav-links > li:hover .dropdown { display: block; }
+.dropdown a {
+  display: block; padding: .75rem 1.2rem;
+  color: #c5baa8; text-decoration: none;
+  font-size: .88rem; font-weight: 500;
+  transition: background .15s, color .15s;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { background: var(--red); color: var(--cream); }
+.nav-cta {
+  background: var(--red) !important; color: var(--cream) !important;
+  padding: .55rem 1.3rem !important; border-radius: 4px !important;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--red-light) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 26px; height: 2px; background: #d9cfc0; border-radius: 2px; }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  margin-top: var(--nav-h);
+  background: var(--red-dark);
+  padding: 4rem 5% 3.5rem;
+  position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 40px,
+    rgba(0,0,0,.04) 40px, rgba(0,0,0,.04) 80px
+  );
+}
+.page-hero-inner { position: relative; z-index: 1; max-width: 780px; }
+.page-eyebrow {
+  display: inline-block; font-size: .72rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--cream); border: 1px solid rgba(252,248,179,.4);
+  padding: .3rem .9rem; border-radius: 2px; margin-bottom: 1rem;
+}
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: var(--warm-white); line-height: 1.1; margin-bottom: .9rem;
+}
+.page-hero h1 em { color: var(--cream); font-style: normal; }
+.page-hero p { font-size: 1.05rem; color: rgba(253,250,243,.75); line-height: 1.7; max-width: 580px; }
+
+/* ── SECTIONS ── */
+.section { padding: 5.5rem 5%; }
+.section-inner { max-width: var(--max-w); margin: 0 auto; }
+.section-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--red); margin-bottom: .5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+.section-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); color: var(--dark); margin-bottom: .9rem; }
+.section-body { font-size: 1.02rem; color: var(--mid-gray); line-height: 1.78; max-width: 600px; }
+
+/* ── BUTTONS ── */
+.btn-red {
+  display: inline-block; background: var(--red); color: var(--cream);
+  border: none; border-radius: 5px; padding: .9rem 2.2rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: .95rem;
+  text-decoration: none; cursor: pointer; transition: background .2s, transform .15s;
+}
+.btn-red:hover { background: var(--red-light); transform: translateY(-2px); }
+.btn-cream {
+  display: inline-block; background: var(--cream); color: var(--dark);
+  border: none; border-radius: 5px; padding: .9rem 2.2rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: .95rem;
+  text-decoration: none; cursor: pointer; transition: background .2s, transform .15s;
+}
+.btn-cream:hover { background: var(--cream-dim); transform: translateY(-2px); }
+.btn-dark {
+  display: inline-block; background: var(--charcoal); color: var(--warm-white);
+  border: none; border-radius: 5px; padding: .9rem 2.2rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: .95rem;
+  text-decoration: none; transition: background .2s;
+}
+.btn-dark:hover { background: var(--dark); }
+.btn-outline {
+  display: inline-block; background: transparent; color: var(--warm-white);
+  border: 1.5px solid rgba(252,248,179,.5); border-radius: 5px; padding: .9rem 2.2rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: .95rem;
+  text-decoration: none; transition: border-color .2s, background .2s;
+}
+.btn-outline:hover { border-color: var(--cream); background: rgba(252,248,179,.1); }
+.btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-row.center { justify-content: center; }
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--charcoal); padding: 1.1rem 5%;
+  display: flex; align-items: center; justify-content: center;
+  gap: 2.5rem; flex-wrap: wrap;
+}
+.trust-item { display: flex; align-items: center; gap: .7rem; color: #c0b49e; font-size: .85rem; font-weight: 500; }
+.trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cream); flex-shrink: 0; }
+
+/* ── NOTICE BOX ── */
+.notice-box {
+  background: var(--cream); border-left: 4px solid var(--red);
+  border-radius: 0 8px 8px 0; padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+}
+.notice-box h4 { font-size: 1rem; color: var(--dark); margin-bottom: .6rem; }
+.notice-list { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+.notice-list li { font-size: .88rem; color: #5a4e3a; padding-left: 1rem; position: relative; }
+.notice-list li::before { content: '—'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+
+/* ── PRICE CARD ── */
+.price-card {
+  background: var(--warm-white); border: 1.5px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.price-card:hover { border-color: var(--red); box-shadow: 0 4px 20px rgba(161,43,49,.1); }
+.price-card-head {
+  background: var(--warm-gray); padding: 1rem 1.4rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.price-card-name { font-size: 1.05rem; color: var(--dark); font-weight: 700; }
+.price-badge {
+  background: var(--red); color: var(--cream);
+  font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: .25rem .6rem; border-radius: 3px; white-space: nowrap; flex-shrink: 0;
+}
+.price-card-body { padding: 1rem 1.4rem; }
+.price-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .45rem 0; border-bottom: 1px solid var(--border); font-size: .9rem;
+}
+.price-row:last-child { border-bottom: none; }
+.price-label { color: var(--mid-gray); font-weight: 500; }
+.price-amt { font-weight: 700; color: var(--dark); font-size: .95rem; }
+
+/* ── PHOTO AREA (lightbox trigger) ── */
+.item-photo {
+  width: 100%; aspect-ratio: 16/10;
+  background: var(--warm-gray);
+  position: relative; overflow: hidden;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.item-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; inset: 0; transition: transform .35s;
+}
+.price-card:hover .item-photo img { transform: scale(1.05); }
+.photo-placeholder {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: .4rem; text-align: center; padding: 1rem;
+  position: relative; z-index: 1;
+}
+.ph-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bfb8a8; }
+.ph-file  { font-size: .72rem; color: #d0c9ba; font-family: monospace; }
+.zoom-hint {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .25s, background .25s;
+}
+.item-photo:hover .zoom-hint { opacity: 1; background: rgba(28,16,8,.45); }
+.zoom-icon {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--cream); color: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+  transform: scale(.8); transition: transform .2s;
+}
+.item-photo:hover .zoom-icon { transform: scale(1); }
+.item-photo.no-photo { cursor: default; }
+.item-photo.no-photo .zoom-hint { display: none; }
+
+/* ── LIGHTBOX ── */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(10,5,2,.92);
+  align-items: center; justify-content: center;
+  padding: 2rem; animation: lbIn .2s ease;
+}
+#lightbox.open { display: flex; }
+@keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
+#lightbox img {
+  max-width: 90vw; max-height: 82vh; object-fit: contain;
+  border-radius: 6px; box-shadow: 0 24px 80px rgba(0,0,0,.6);
+  animation: lbUp .25s ease;
+}
+@keyframes lbUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.lb-caption {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  background: rgba(28,16,8,.85); color: var(--cream);
+  padding: .6rem 1.4rem; border-radius: 100px;
+  font-size: .9rem; font-weight: 600; white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+}
+.lb-close, .lb-arrow {
+  position: fixed; width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(252,248,179,.12); border: 1.5px solid rgba(252,248,179,.25);
+  color: var(--cream); font-size: 1.3rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s; user-select: none;
+}
+.lb-close:hover, .lb-arrow:hover { background: var(--red); border-color: var(--red); }
+.lb-close { top: 1.5rem; right: 1.5rem; }
+.lb-prev  { top: 50%; transform: translateY(-50%); left: 1.5rem; font-size: 1.6rem; }
+.lb-next  { top: 50%; transform: translateY(-50%); right: 1.5rem; font-size: 1.6rem; }
+
+/* ── SUB CARDS (attachments etc) ── */
+.sub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .75rem; margin-bottom: 1rem; }
+.sub-card { background: var(--warm-gray); border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1.1rem; }
+.sub-card-name { font-size: .88rem; font-weight: 700; color: var(--dark); margin-bottom: .5rem; }
+.sub-price-row { display: flex; justify-content: space-between; font-size: .82rem; padding: .2rem 0; color: var(--mid-gray); }
+.sub-price-row span:last-child { font-weight: 700; color: var(--charcoal); }
+.sub-title { font-size: 1.1rem; color: var(--dark); margin: 2rem 0 .8rem; }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; max-width: var(--max-w); margin-inline: auto;
+  padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.footer-brand img { height: 46px; margin-bottom: 1rem; }
+.footer-brand p { font-size: .88rem; line-height: 1.7; max-width: 280px; }
+.footer-col h5 {
+  font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: #a09280; margin-bottom: 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+.footer-col a { color: #7a6e5e; text-decoration: none; font-size: .88rem; transition: color .2s; }
+.footer-col a:hover { color: var(--cream); }
+.footer-bottom {
+  max-width: var(--max-w); margin-inline: auto; padding-top: 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .5rem; font-size: .8rem;
+}
+.footer-bottom a { color: var(--cream); text-decoration: none; }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s, transform .6s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .footer-top { grid-template-columns: 1fr; } .trust-bar { gap: 1rem; } }
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; align-items: flex-start;
+    position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: var(--dark); padding: 1.5rem 5%; overflow-y: auto; z-index: 199;
+  }
+  .nav-links.open > li { width: 100%; }
+  .nav-links.open > li > a { padding: .9rem 0; font-size: 1rem; }
+  .dropdown { display: none !important; }
+  .hamburger { display: flex; }
+}
+
+</style>
   <style>.equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}</style>
 </head>
 <body>
 <div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
 <nav>
-  <a href="/atha-rental-website/" class="nav-logo"><img src="../../images/logo.png" alt="Atha Equipment Rental"/></a>
+  <a href="https://joeconner44.github.io/atha-rental-website/" class="nav-logo"><img src="https://joeconner44.github.io/atha-rental-website/images/logo.png" alt="Atha Equipment Rental"/></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="/rentals/">Rental Items <span class="arrow">▼</span></a><div class="dropdown"><a href="/rentals/dumpsters/">Dumpsters</a><a href="/rentals/toilets/">Toilets &amp; Sanitation</a><a href="/rentals/heavy-equipment/">Heavy Equipment</a><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a><a href="/rentals/other/">Other Equipment</a><a href="/rentals/party/">Party Equipment</a></div></li>
-    <li><a href="/contact/">Contact Us</a></li>
-    <li><a href="/about/">About Us <span class="arrow">▼</span></a><div class="dropdown"><a href="/about/#team">Our Team</a><a href="/about/#mission">Our Mission</a><a href="/about/#values">Our Values</a></div></li>
-    <li><a href="/blog/">Learn More <span class="arrow">▼</span></a><div class="dropdown"><a href="/blog/">Equipment 101</a></div></li>
-    <li><a href="/contact/" class="nav-cta">Get a Quote</a></li>
+    <li><a href="https://joeconner44.github.io/atha-rental-website/rentals/">Rental Items <span class="arrow">▼</span></a><div class="dropdown"><a href="https://joeconner44.github.io/atha-rental-website/rentals/dumpsters/">Dumpsters</a><a href="https://joeconner44.github.io/atha-rental-website/rentals/toilets/">Toilets &amp; Sanitation</a><a href="https://joeconner44.github.io/atha-rental-website/rentals/heavy-equipment/">Heavy Equipment</a><a href="https://joeconner44.github.io/atha-rental-website/rentals/lawn-garden/">Lawn &amp; Garden</a><a href="https://joeconner44.github.io/atha-rental-website/rentals/other/">Other Equipment</a><a href="https://joeconner44.github.io/atha-rental-website/rentals/party/">Party Equipment</a></div></li>
+    <li><a href="https://joeconner44.github.io/atha-rental-website/contact/">Contact Us</a></li>
+    <li><a href="https://joeconner44.github.io/atha-rental-website/about/">About Us <span class="arrow">▼</span></a><div class="dropdown"><a href="https://joeconner44.github.io/atha-rental-website/about/#team">Our Team</a><a href="https://joeconner44.github.io/atha-rental-website/about/#mission">Our Mission</a><a href="https://joeconner44.github.io/atha-rental-website/about/#values">Our Values</a></div></li>
+    <li><a href="https://joeconner44.github.io/atha-rental-website/blog/">Learn More <span class="arrow">▼</span></a><div class="dropdown"><a href="https://joeconner44.github.io/atha-rental-website/blog/">Equipment 101</a></div></li>
+    <li><a href="https://joeconner44.github.io/atha-rental-website/contact/" class="nav-cta">Get a Quote</a></li>
   </ul>
   <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <span class="page-eyebrow"><a href="/rentals/" style="color:inherit;text-decoration:none;">Rental Items</a> · Lawn &amp; Garden</span>
+    <span class="page-eyebrow"><a href="https://joeconner44.github.io/atha-rental-website/rentals/" style="color:inherit;text-decoration:none;">Rental Items</a> · Lawn &amp; Garden</span>
     <h1>Lawn &amp; <em>Garden</em> Equipment</h1>
     <p>Everything you need to get your yard in shape — from aerating and dethatching to tilling and blowing.</p>
   </div>
@@ -36,34 +362,34 @@
   <div class="section-inner">
     <div class="equip-grid">
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/walkaerator.jpg" data-caption="Walk Behind Aerator"><img src="../../images/walkaerator.jpg" alt="Walk Behind Aerator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/walkaerator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Walk Behind Aerator</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$55</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/walkaerator.jpg" data-caption="Walk Behind Aerator"><img src="https://joeconner44.github.io/atha-rental-website/images/walkaerator.jpg" alt="Walk Behind Aerator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/walkaerator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Walk Behind Aerator</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$55</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/coreaerator.jpg" data-caption="Core Aerator (Pull Behind)"><img src="../../images/coreaerator.jpg" alt="Core Aerator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/coreaerator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Core Aerator (Pull Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$30</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$40</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/coreaerator.jpg" data-caption="Core Aerator (Pull Behind)"><img src="https://joeconner44.github.io/atha-rental-website/images/coreaerator.jpg" alt="Core Aerator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/coreaerator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Core Aerator (Pull Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$30</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$40</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/spikeaerator.jpg" data-caption="Spike Aerator (Pull Behind)"><img src="../../images/spikeaerator.jpg" alt="Spike Aerator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/spikeaerator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Spike Aerator (Pull Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$30</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$40</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/spikeaerator.jpg" data-caption="Spike Aerator (Pull Behind)"><img src="https://joeconner44.github.io/atha-rental-website/images/spikeaerator.jpg" alt="Spike Aerator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/spikeaerator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Spike Aerator (Pull Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$30</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$40</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/sodroller.jpg" data-caption="Sod Roller (Pull Behind)"><img src="../../images/sodroller.jpg" alt="Sod Roller" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/sodroller.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Sod Roller (Pull Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Per Day</span><span class="price-amt">$15</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/sodroller.jpg" data-caption="Sod Roller (Pull Behind)"><img src="https://joeconner44.github.io/atha-rental-website/images/sodroller.jpg" alt="Sod Roller" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/sodroller.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Sod Roller (Pull Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Per Day</span><span class="price-amt">$15</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/dethatcher-walk.jpg" data-caption="Dethatcher (Walk Behind)"><img src="../../images/dethatcher-walk.jpg" alt="Dethatcher Walk Behind" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dethatcher-walk.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Dethatcher (Walk Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$55</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/dethatcher-walk.jpg" data-caption="Dethatcher (Walk Behind)"><img src="https://joeconner44.github.io/atha-rental-website/images/dethatcher-walk.jpg" alt="Dethatcher Walk Behind" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dethatcher-walk.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Dethatcher (Walk Behind)</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$55</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/tiller-rear.jpg" data-caption="Rear Tine Tiller"><img src="../../images/tiller-rear.jpg" alt="Rear Tine Tiller" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/tiller-rear.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Tiller — Rear Tine</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$65</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/tiller-rear.jpg" data-caption="Rear Tine Tiller"><img src="https://joeconner44.github.io/atha-rental-website/images/tiller-rear.jpg" alt="Rear Tine Tiller" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/tiller-rear.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Tiller — Rear Tine</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$65</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$85</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/tiller-mid.jpg" data-caption="Mid Tine Tiller"><img src="../../images/tiller-mid.jpg" alt="Mid Tine Tiller" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/tiller-mid.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Tiller — Mid Tine</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$45</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$65</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/tiller-mid.jpg" data-caption="Mid Tine Tiller"><img src="https://joeconner44.github.io/atha-rental-website/images/tiller-mid.jpg" alt="Mid Tine Tiller" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/tiller-mid.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Tiller — Mid Tine</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$45</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$65</span></div></div></div>
 
-      <div class="price-card reveal"><div class="item-photo no-photo" data-src="../../images/blower-backpack.jpg" data-caption="Backpack Blower"><img src="../../images/blower-backpack.jpg" alt="Backpack Blower" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/blower-backpack.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Blower — Backpack</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$15</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$25</span></div></div></div>
+      <div class="price-card reveal"><div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/blower-backpack.jpg" data-caption="Backpack Blower"><img src="https://joeconner44.github.io/atha-rental-website/images/blower-backpack.jpg" alt="Backpack Blower" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/blower-backpack.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div><div class="price-card-head"><div class="price-card-name">Blower — Backpack</div></div><div class="price-card-body"><div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$15</span></div><div class="price-row"><span class="price-label">Full Day</span><span class="price-amt">$25</span></div></div></div>
 
     </div>
   </div>
 </section>
 
-<div style="background:var(--cream);padding:4rem 5%;text-align:center;"><div class="reveal"><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--dark);margin-bottom:.8rem;">Questions About Equipment?</h2><p style="font-size:1rem;color:#5a4e3a;max-width:480px;margin:0 auto 1.8rem;line-height:1.7;">Not sure what you need? Give us a call and we'll help you pick the right tool for the job.</p><div class="btn-row center"><a href="/contact/" class="btn-red">Contact Us</a><a href="tel:7702076041" class="btn-dark">Call (770) 207-6041</a></div></div></div>
+<div style="background:var(--cream);padding:4rem 5%;text-align:center;"><div class="reveal"><h2 style="font-size:clamp(1.8rem,3vw,2.4rem);color:var(--dark);margin-bottom:.8rem;">Questions About Equipment?</h2><p style="font-size:1rem;color:#5a4e3a;max-width:480px;margin:0 auto 1.8rem;line-height:1.7;">Not sure what you need? Give us a call and we'll help you pick the right tool for the job.</p><div class="btn-row center"><a href="https://joeconner44.github.io/atha-rental-website/contact/" class="btn-red">Contact Us</a><a href="tel:7702076041" class="btn-dark">Call (770) 207-6041</a></div></div></div>
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><img src="../../images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
-    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="/rentals/dumpsters/">Dumpsters</a></li><li><a href="/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="/rentals/other/">Other Equipment</a></li><li><a href="/rentals/party/">Party Equipment</a></li></ul></div>
-    <div class="footer-col"><h5>Company</h5><ul><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#mission">Our Mission</a></li><li><a href="/about/#values">Our Values</a></li><li><a href="/blog/">Equipment 101</a></li></ul></div>
-    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="/cdn-cgi/l/email-protection#39584d51585c484c5049545c574d4b5c574d5855794058515656175a5654">Email Us</a></li><li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="/contact/">Hours &amp; Location</a></li></ul></div>
+    <div class="footer-brand"><img src="https://joeconner44.github.io/atha-rental-website/images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
+    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/dumpsters/">Dumpsters</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/other/">Other Equipment</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/party/">Party Equipment</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="https://joeconner44.github.io/atha-rental-website/about/#team">Our Team</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/about/#mission">Our Mission</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/about/#values">Our Values</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/blog/">Equipment 101</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="/cdn-cgi/l/email-protection#39584d51585c484c5049545c574d4b5c574d5855794058515656175a5654">Email Us</a></li><li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/contact/">Hours &amp; Location</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2025 Atha Equipment Rental. All rights reserved.</span><span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span></div>
 </footer>
