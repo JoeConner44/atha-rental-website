@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/atha-rental-website/">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | Atha Equipment Rental | Monroe, GA</title>
@@ -52,7 +53,7 @@
 <body>
 <div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
 <nav>
-  <a href="/" class="nav-logo"><img src="../images/logo.png" alt="Atha Equipment Rental"/></a>
+  <a href="/atha-rental-website/" class="nav-logo"><img src="../images/logo.png" alt="Atha Equipment Rental"/></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="/rentals/">Rental Items <span class="arrow">▼</span></a><div class="dropdown"><a href="/rentals/dumpsters/">Dumpsters</a><a href="/rentals/toilets/">Toilets &amp; Sanitation</a><a href="/rentals/heavy-equipment/">Heavy Equipment</a><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a><a href="/rentals/other/">Other Equipment</a><a href="/rentals/party/">Party Equipment</a></div></li>
     <li><a href="/contact/">Contact Us</a></li>
@@ -86,7 +87,7 @@
       <div class="info-cards">
         <div class="info-card">
           <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fcf8b3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="info-lbl">Email</div><div class="info-val"><a href="mailto:athaequipmentrental@yahoo.com">athaequipmentrental@yahoo.com</a></div></div>
+          <div><div class="info-lbl">Email</div><div class="info-val"><a href="/cdn-cgi/l/email-protection#7617021e171307031f061b13180204131802171a360f171e19195815191b"><span class="__cf_email__" data-cfemail="fb9a8f939a9e8a8e928b969e958f899e958f9a97bb829a939494d5989496">[email&#160;protected]</span></a></div></div>
         </div>
         <div class="info-card">
           <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fcf8b3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -141,17 +142,17 @@
     <div class="footer-brand"><img src="../images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
     <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="/rentals/dumpsters/">Dumpsters</a></li><li><a href="/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="/rentals/other/">Other Equipment</a></li><li><a href="/rentals/party/">Party Equipment</a></li></ul></div>
     <div class="footer-col"><h5>Company</h5><ul><li><a href="/about/#team">Our Team</a></li><li><a href="/about/#mission">Our Mission</a></li><li><a href="/about/#values">Our Values</a></li><li><a href="/blog/">Equipment 101</a></li></ul></div>
-    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="mailto:athaequipmentrental@yahoo.com">Email Us</a></li><li><a href="https://goo.gl/maps/4B25ZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="/cdn-cgi/l/email-protection#1776637f767266627e677a72796365727963767b576e767f78783974787a">Email Us</a></li><li><a href="https://goo.gl/maps/4B25ZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li></ul></div>
   </div>
   <div class="footer-bottom"><span>© 2025 Atha Equipment Rental. All rights reserved.</span><span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span></div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.js"></script>
 <script>
   /* ── REPLACE THIS URL after deploying your Google Apps Script ──
      Instructions: Extensions > Apps Script > paste appsscript.js >
      Save > Deploy > New Deployment > Web App > Anyone > Deploy > copy URL */
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUQnlOz5QUyWWcRvXWntjGmFRVc5NOcuCPN5HdqWEqNVHSri4hQzOXe3lDtS68x_4T/exec';
+  const APPS_SCRIPT_URL = 'PASTE_YOUR_WEB_APP_URL_HERE';
 
   async function submitForm() {
     const btn     = document.getElementById('submitBtn');
@@ -176,13 +177,4 @@
       if (json.result === 'success') {
         success.style.display = 'block';
         ['firstName','lastName','phone','email','dates','message'].forEach(id => { document.getElementById(id).value = ''; });
-        document.getElementById('service').value = '';
-        btn.textContent = 'Message Sent!';
-      } else { throw new Error(json.error || 'Unknown error'); }
-    } catch (err) {
-      error.style.display = 'block'; btn.disabled = false; btn.textContent = 'Send Message'; console.error(err);
-    }
-  }
-</script>
-</body>
-</html>
+        document.
