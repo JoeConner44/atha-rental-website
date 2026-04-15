@@ -225,11 +225,8 @@ nav {
   position: absolute; inset: 0; transition: transform .35s;
 }
 .price-card:hover .item-photo img { transform: scale(1.05); }
-.photo-placeholder {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: .4rem; text-align: center; padding: 1rem;
-  position: relative; z-index: 1;
-}
+.photo-placeholder { display: none; flex-direction: column; align-items: center; justify-content: center; gap: .4rem; text-align: center; padding: 1rem; position: relative; z-index: 1; }
+.no-photo .photo-placeholder { display: flex; }
 .ph-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bfb8a8; }
 .ph-file  { font-size: .72rem; color: #d0c9ba; font-family: monospace; }
 .zoom-hint {
@@ -370,7 +367,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
       <div class="price-card reveal">
         <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/portable-toilet.jpg" data-caption="Portable Toilet">
-          <img src="https://joeconner44.github.io/atha-rental-website/images/portable-toilet.jpg" alt="Portable Toilet" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/portable-toilet.jpg" alt="Portable Toilet" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
           <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/portable-toilet.jpg</span></div>
           <div class="zoom-hint"><div class="zoom-icon">View</div></div>
         </div>
@@ -387,7 +384,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
       <div class="price-card reveal">
         <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/holding-tank.jpg" data-caption="Holding Tank (250 Gallon)">
-          <img src="https://joeconner44.github.io/atha-rental-website/images/holding-tank.jpg" alt="Holding Tank" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/holding-tank.jpg" alt="Holding Tank" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
           <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/holding-tank.jpg</span></div>
           <div class="zoom-hint"><div class="zoom-icon">View</div></div>
         </div>
@@ -404,7 +401,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
       <div class="price-card reveal">
         <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/handwash-station.jpg" data-caption="Hand Washing Station">
-          <img src="https://joeconner44.github.io/atha-rental-website/images/handwash-station.jpg" alt="Hand Washing Station" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/handwash-station.jpg" alt="Hand Washing Station" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
           <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/handwash-station.jpg</span></div>
           <div class="zoom-hint"><div class="zoom-icon">View</div></div>
         </div>

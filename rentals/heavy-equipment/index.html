@@ -225,11 +225,8 @@ nav {
   position: absolute; inset: 0; transition: transform .35s;
 }
 .price-card:hover .item-photo img { transform: scale(1.05); }
-.photo-placeholder {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: .4rem; text-align: center; padding: 1rem;
-  position: relative; z-index: 1;
-}
+.photo-placeholder { display: none; flex-direction: column; align-items: center; justify-content: center; gap: .4rem; text-align: center; padding: 1rem; position: relative; z-index: 1; }
+.no-photo .photo-placeholder { display: flex; }
 .ph-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bfb8a8; }
 .ph-file  { font-size: .72rem; color: #d0c9ba; font-family: monospace; }
 .zoom-hint {
@@ -376,7 +373,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       <div class="equip-grid">
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/skidsteer.jpg" data-caption="Skid Steer Loader (TL8)"><img src="https://joeconner44.github.io/atha-rental-website/images/skidsteer.jpg" alt="Skid Steer" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/skidsteer.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/skidsteer.jpg" data-caption="Skid Steer Loader (TL8)"><img src="https://joeconner44.github.io/atha-rental-website/images/skidsteer.jpg" alt="Skid Steer" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/skidsteer.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Skid Steer Loader (TL8)</div><span class="price-badge">Popular</span></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day (4 hrs)</span><span class="price-amt">$275</span></div>
@@ -387,7 +384,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/dingo.jpg" data-caption="Walk Behind Dingo"><img src="https://joeconner44.github.io/atha-rental-website/images/dingo.jpg" alt="Walk Behind Dingo" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dingo.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/dingo.jpg" data-caption="Walk Behind Dingo"><img src="https://joeconner44.github.io/atha-rental-website/images/dingo.jpg" alt="Walk Behind Dingo" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dingo.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Walk Behind Dingo</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$175</span></div>
@@ -396,7 +393,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/miniexcavator.jpg" data-caption="Mini Excavator"><img src="https://joeconner44.github.io/atha-rental-website/images/miniexcavator.jpg" alt="Mini Excavator" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/miniexcavator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/miniexcavator.jpg" data-caption="Mini Excavator"><img src="https://joeconner44.github.io/atha-rental-website/images/miniexcavator.jpg" alt="Mini Excavator" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/miniexcavator.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Mini Excavator</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day (4 hrs)</span><span class="price-amt">$250</span></div>
@@ -406,7 +403,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/scissorlift.jpg" data-caption="Scissor Lift"><img src="https://joeconner44.github.io/atha-rental-website/images/scissorlift.jpg" alt="Scissor Lift" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/scissorlift.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/scissorlift.jpg" data-caption="Scissor Lift"><img src="https://joeconner44.github.io/atha-rental-website/images/scissorlift.jpg" alt="Scissor Lift" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/scissorlift.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Scissor Lift</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">19' — Per Day</span><span class="price-amt">$145</span></div>
@@ -415,7 +412,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/bucketlift.jpg" data-caption="Bucket Lift (35ft)"><img src="https://joeconner44.github.io/atha-rental-website/images/bucketlift.jpg" alt="Bucket Lift" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/bucketlift.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/bucketlift.jpg" data-caption="Bucket Lift (35ft)"><img src="https://joeconner44.github.io/atha-rental-website/images/bucketlift.jpg" alt="Bucket Lift" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/bucketlift.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Bucket Lift (35')</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$225</span></div>
@@ -424,7 +421,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/materiallift.jpg" data-caption="Material Lift"><img src="https://joeconner44.github.io/atha-rental-website/images/materiallift.jpg" alt="Material Lift" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/materiallift.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/materiallift.jpg" data-caption="Material Lift"><img src="https://joeconner44.github.io/atha-rental-website/images/materiallift.jpg" alt="Material Lift" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/materiallift.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Material Lift</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$45</span></div>
@@ -433,7 +430,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/logsplitter.jpg" data-caption="Log Splitter (22 Ton)"><img src="https://joeconner44.github.io/atha-rental-website/images/logsplitter.jpg" alt="Log Splitter" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/logsplitter.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/logsplitter.jpg" data-caption="Log Splitter (22 Ton)"><img src="https://joeconner44.github.io/atha-rental-website/images/logsplitter.jpg" alt="Log Splitter" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/logsplitter.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Log Splitter (22 Ton)</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$60</span></div>
@@ -442,7 +439,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
         </div>
 
         <div class="price-card reveal">
-          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/concretebuggy.jpg" data-caption="Concrete Buggy"><img src="https://joeconner44.github.io/atha-rental-website/images/concretebuggy.jpg" alt="Concrete Buggy" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/concretebuggy.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
+          <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/concretebuggy.jpg" data-caption="Concrete Buggy"><img src="https://joeconner44.github.io/atha-rental-website/images/concretebuggy.jpg" alt="Concrete Buggy" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/><div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/concretebuggy.jpg</span></div><div class="zoom-hint"><div class="zoom-icon">View</div></div></div>
           <div class="price-card-head"><div class="price-card-name">Concrete Buggy</div></div>
           <div class="price-card-body">
             <div class="price-row"><span class="price-label">Half Day</span><span class="price-amt">$110</span></div>

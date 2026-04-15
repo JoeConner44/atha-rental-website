@@ -225,11 +225,8 @@ nav {
   position: absolute; inset: 0; transition: transform .35s;
 }
 .price-card:hover .item-photo img { transform: scale(1.05); }
-.photo-placeholder {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: .4rem; text-align: center; padding: 1rem;
-  position: relative; z-index: 1;
-}
+.photo-placeholder { display: none; flex-direction: column; align-items: center; justify-content: center; gap: .4rem; text-align: center; padding: 1rem; position: relative; z-index: 1; }
+.no-photo .photo-placeholder { display: flex; }
 .ph-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bfb8a8; }
 .ph-file  { font-size: .72rem; color: #d0c9ba; font-family: monospace; }
 .zoom-hint {
@@ -387,7 +384,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       <!-- 20 YD -->
       <div class="dumpster-card reveal">
         <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/dumpster-20yd.jpg" data-caption="20 Yard Dumpster">
-          <img src="https://joeconner44.github.io/atha-rental-website/images/dumpster-20yd.jpg" alt="20 Yard Dumpster" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/dumpster-20yd.jpg" alt="20 Yard Dumpster" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
           <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dumpster-20yd.jpg</span></div>
           <div class="zoom-hint"><div class="zoom-icon">View</div></div>
         </div>
@@ -417,7 +414,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       <!-- 30 YD -->
       <div class="dumpster-card reveal">
         <div class="item-photo no-photo" data-src="https://joeconner44.github.io/atha-rental-website/images/dumpster-30yd.jpg" data-caption="30 Yard Dumpster">
-          <img src="https://joeconner44.github.io/atha-rental-website/images/dumpster-30yd.jpg" alt="30 Yard Dumpster" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/dumpster-30yd.jpg" alt="30 Yard Dumpster" onload="this.parentElement.classList.remove('no-photo')" onerror="this.parentElement.classList.add('no-photo');this.style.display='none'"/>
           <div class="photo-placeholder"><span class="ph-label">Add Photo</span><span class="ph-file">images/dumpster-30yd.jpg</span></div>
           <div class="zoom-hint"><div class="zoom-icon">View</div></div>
         </div>
