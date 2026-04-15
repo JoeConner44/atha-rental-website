@@ -229,23 +229,12 @@ nav {
 .no-photo .photo-placeholder { display: flex; }
 .ph-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bfb8a8; }
 .ph-file  { font-size: .72rem; color: #d0c9ba; font-family: monospace; }
-.zoom-hint {
-  position: absolute; inset: 0; z-index: 2;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity .25s, background .25s;
-}
-.item-photo:hover .zoom-hint { opacity: 1; background: rgba(28,16,8,.45); }
-.zoom-icon {
-  width: 46px; height: 46px; border-radius: 50%;
-  background: var(--cream); color: var(--dark);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .8rem; font-weight: 700; letter-spacing: .04em;
-  box-shadow: 0 4px 16px rgba(0,0,0,.3);
-  transform: scale(.8); transition: transform .2s;
-}
-.item-photo:hover .zoom-icon { transform: scale(1); }
+.zoom-hint { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .25s; }
+.item-photo:hover .zoom-hint { opacity: 0; }
+.zoom-icon { display: none; }
+
 .item-photo.no-photo { cursor: default; }
-.item-photo.no-photo .zoom-hint { display: none; }
+.item-photo.no-photo .zoom-hint { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .25s; }
 
 /* ── LIGHTBOX ── */
 #lightbox {
@@ -392,4 +381,32 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
   </div>
   <div class="footer-bottom"><span>© 2025 Atha Equipment Rental. All rights reserved.</span><span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span></div>
 </footer>
-<scri
+<script>
+  var ham=document.getElementById("hamburger");
+  var navL=document.getElementById("navLinks");
+  if(ham&&navL){
+    ham.addEventListener("click",function(){navL.classList.toggle("open");});
+    document.addEventListener("click",function(e){if(!ham.contains(e.target)&&!navL.contains(e.target))navL.classList.remove("open");});
+  }
+  var lb=document.getElementById("lightbox");
+  var lbImg=document.getElementById("lb-img");
+  var lbCap=document.getElementById("lb-caption");
+  var lbClose=document.getElementById("lb-close");
+  var lbPrev=document.getElementById("lb-prev");
+  var lbNext=document.getElementById("lb-next");
+  var photos=[],cur=0;
+  function buildList(){photos=[];document.querySelectorAll(".item-photo:not(.no-photo)").forEach(function(el){if(el.dataset.src)photos.push({src:el.dataset.src,caption:el.dataset.caption||""}); });}
+  function showPhoto(i){if(!photos.length)return;cur=(i+photos.length)%photos.length;lbImg.src=photos[cur].src;lbCap.textContent=photos[cur].caption;lbPrev.style.display=photos.length>1?"flex":"none";lbNext.style.display=photos.length>1?"flex":"none";}
+  function openLB(src,cap){buildList();cur=photos.findIndex(function(p){return p.src===src;});if(cur===-1)cur=0;showPhoto(cur);lb.classList.add("open");document.body.style.overflow="hidden";}
+  function closeLB(){lb.classList.remove("open");document.body.style.overflow="";lbImg.src="";}
+  if(lb){
+    document.addEventListener("click",function(e){var p=e.target.closest(".item-photo:not(.no-photo)");if(p&&p.dataset.src)openLB(p.dataset.src,p.dataset.caption||"");});
+    lbClose.addEventListener("click",closeLB);
+    lbPrev.addEventListener("click",function(e){e.stopPropagation();showPhoto(cur-1);});
+    lbNext.addEventListener("click",function(e){e.stopPropagation();showPhoto(cur+1);});
+    lb.addEventListener("click",function(e){if(e.target===lb)closeLB();});
+    document.addEventListener("keydown",function(e){if(!lb.classList.contains("open"))return;if(e.key==="Escape")closeLB();if(e.key==="ArrowLeft")showPhoto(cur-1);if(e.key==="ArrowRight")showPhoto(cur+1);});
+  }
+</script>
+</body>
+</html>
