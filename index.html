@@ -404,7 +404,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
     /* services grid */
     #services { background: var(--warm-gray); }
-    .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .svc-card {
       background: var(--warm-white); border-radius: 10px; overflow: hidden;
       text-decoration: none; color: inherit;
@@ -419,8 +419,9 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       background: var(--warm-gray);
       display: flex; align-items: center; justify-content: center;
       border-bottom: 1px solid var(--border); overflow: hidden;
+      position: relative;
     }
-    .svc-icon img { width: 100px; height: 100px; object-fit: contain; transition: transform .3s; }
+    .svc-icon img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform .3s; }
     .svc-card:hover .svc-icon img { transform: scale(1.08); }
     .svc-icon .svc-icon-placeholder { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #c0b9a8; }
     .svc-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
@@ -570,7 +571,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     <div class="svc-grid">
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/dumpsters/" class="svc-card reveal">
         <div class="svc-icon">
-          <img src="https://joeconner44.github.io/atha-rental-website/icons/icon-dumpster.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/dumpsters.jpg" alt="Dumpsters" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <span class="svc-icon-placeholder" style="display:none;">Add icon</span>
         </div>
         <div class="svc-body">
@@ -581,7 +582,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/toilets/" class="svc-card reveal">
         <div class="svc-icon">
-          <img src="https://joeconner44.github.io/atha-rental-website/icons/icon-toilets.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/toilets.jpg" alt="Toilets" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <span class="svc-icon-placeholder" style="display:none;">Add icon</span>
         </div>
         <div class="svc-body">
@@ -592,7 +593,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/heavy-equipment/" class="svc-card reveal">
         <div class="svc-icon">
-          <img src="https://joeconner44.github.io/atha-rental-website/icons/icon-heavy.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/heavy-equipment.jpg" alt="Heavy Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <span class="svc-icon-placeholder" style="display:none;">Add icon</span>
         </div>
         <div class="svc-body">
@@ -603,7 +604,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/lawn-garden/" class="svc-card reveal">
         <div class="svc-icon">
-          <img src="https://joeconner44.github.io/atha-rental-website/icons/icon-lawn.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/lawn-garden.jpg" alt="Lawn and Garden" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <span class="svc-icon-placeholder" style="display:none;">Add icon</span>
         </div>
         <div class="svc-body">
@@ -614,7 +615,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/other/" class="svc-card reveal">
         <div class="svc-icon">
-          <img src="https://joeconner44.github.io/atha-rental-website/icons/icon-other.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/other.jpg" alt="Other Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <span class="svc-icon-placeholder" style="display:none;">Add icon</span>
         </div>
         <div class="svc-body">
@@ -625,7 +626,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/party/" class="svc-card reveal">
         <div class="svc-icon">
-          <img src="https://joeconner44.github.io/atha-rental-website/icons/icon-party.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+          <img src="https://joeconner44.github.io/atha-rental-website/images/party.jpg" alt="Party Equipment" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
           <span class="svc-icon-placeholder" style="display:none;">Add icon</span>
         </div>
         <div class="svc-body">
@@ -743,7 +744,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     </ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Atha Equipment Rental. All rights reserved.</span>
+    <span>© 2026 Atha Equipment Rental. All rights reserved.</span>
     <span>Monroe, Georgia · <a href="tel:7702076041">(770) 207-6041</a></span>
   </div>
 </footer>
