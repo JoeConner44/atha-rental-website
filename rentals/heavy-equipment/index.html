@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+    <link rel="icon" type="image/x-icon" href="https://joeconner44.github.io/atha-rental-website/favicon.ico"/>
+  <link rel="apple-touch-icon" href="https://joeconner44.github.io/atha-rental-website/images/logo.png"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Heavy Equipment Rentals | Atha Equipment Rental | Monroe, GA</title>
   <meta name="description" content="Heavy equipment rentals in Monroe, GA. Skid steers, mini excavators, scissor lifts, bucket lifts, log splitters, and more. Half day, full day, and weekly rates."/>
@@ -214,15 +216,15 @@ nav {
 
 /* ── PHOTO AREA (lightbox trigger) ── */
 .item-photo {
-  width: 100%; aspect-ratio: 16/10;
+  width: 100%; aspect-ratio: 1/1;
   background: var(--warm-gray);
   position: relative; overflow: hidden;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
 }
 .item-photo img {
-  width: 100%; height: 100%; object-fit: cover;
-  position: absolute; inset: 0; transition: transform .35s;
+  width: 100%; height: 100%; object-fit: contain;
+  position: absolute; inset: 0; transition: transform .35s; background: var(--warm-gray);
 }
 .price-card:hover .item-photo img { transform: scale(1.05); }
 .photo-placeholder { display: none; flex-direction: column; align-items: center; justify-content: center; gap: .4rem; text-align: center; padding: 1rem; position: relative; z-index: 1; }
@@ -457,6 +459,14 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       <div class="sub-grid">
         <div class="sub-card"><div class="sub-card-name">Trencher</div><div class="sub-price-row"><span>Half Day</span><span>$50</span></div><div class="sub-price-row"><span>Full Day</span><span>$75</span></div></div>
         <div class="sub-card"><div class="sub-card-name">Harley Rake</div><div class="sub-price-row"><span>Half Day</span><span>$100</span></div><div class="sub-price-row"><span>Full Day</span><span>$175</span></div></div>
+      </div>
+    </div>
+    <div class="cat-section reveal">
+      <h3 class="cat-section-title">Tractor Hitch Attachments</h3>
+      <div class="sub-grid">
+        <div class="sub-card"><div class="sub-card-name">Rake</div><div class="sub-price-row"><span>Half Day</span><span>$55</span></div><div class="sub-price-row"><span>Full Day</span><span>$85</span></div></div>
+        <div class="sub-card"><div class="sub-card-name">Box Blade</div><div class="sub-price-row"><span>Half Day</span><span>$55</span></div><div class="sub-price-row"><span>Full Day</span><span>$85</span></div></div>
+        <div class="sub-card"><div class="sub-card-name">Pulverizer</div><div class="sub-price-row"><span>Half Day</span><span>$55</span></div><div class="sub-price-row"><span>Full Day</span><span>$85</span></div></div>
       </div>
     </div>
 
