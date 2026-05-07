@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rental Items &amp; Pricing | Atha Equipment Rental</title>
   <meta name="description" content="Browse all rental items and pricing at Atha Equipment Rental in Monroe, GA. Dumpsters, toilets, heavy equipment, lawn tools, and party rentals."/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap&display=swap" rel="stylesheet"/>
   <style>
 /* ============================================================
    ATHA EQUIPMENT RENTAL — Global Stylesheet
@@ -359,7 +361,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
   </style>
 </head>
 <body>
-<div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
+<div id="lightbox"><button id="lb-close" class="lb-close">✕</button><button id="lb-prev" class="lb-arrow lb-prev">&#8249;</button><img loading="lazy" id="lb-img" src="" alt=""/><button id="lb-next" class="lb-arrow lb-next">&#8250;</button><div id="lb-caption" class="lb-caption"></div></div>
 <nav>
   <ul class="nav-links" id="navLinks">
     <li><a href="https://joeconner44.github.io/atha-rental-website/" class="nav-home">Home</a></li>
@@ -390,27 +392,27 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     </div>
     <div class="cat-grid">
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/dumpsters/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — dumpsters.jpg</span><img src="https://joeconner44.github.io/atha-rental-website/images/dumpsters.jpg" alt="Dumpsters" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — dumpsters.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/dumpsters.jpg" alt="Dumpsters" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Dumpsters</h3><p>20 &amp; 30 yard roll-off dumpsters for cleanouts, renovations, and construction. Flat-rate pricing.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/toilets/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — toilets.jpg</span><img src="https://joeconner44.github.io/atha-rental-website/images/toilets.jpg" alt="Toilets" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — toilets.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/toilets.jpg" alt="Toilets" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Toilets &amp; Sanitation</h3><p>Portable toilets, holding tanks, and hand washing stations for job sites and events.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/heavy-equipment/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — heavy-equipment.jpg</span><img src="https://joeconner44.github.io/atha-rental-website/images/heavy-equipment.jpg" alt="Heavy Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — heavy-equipment.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/heavy-equipment.jpg" alt="Heavy Equipment" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Heavy Equipment</h3><p>Skid steers, excavators, lifts, log splitters, concrete buggies, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/lawn-garden/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — lawn-garden.jpg</span><img src="https://joeconner44.github.io/atha-rental-website/images/lawn-garden.jpg" alt="Lawn and Garden" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — lawn-garden.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/lawn-garden.jpg" alt="Lawn and Garden" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Lawn &amp; Garden</h3><p>Walk behind aerators, tillers, dethatchers, sod rollers, and blowers.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/other/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — other.jpg</span><img src="https://joeconner44.github.io/atha-rental-website/images/other.jpg" alt="Other Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — other.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/other.jpg" alt="Other Equipment" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Other Equipment</h3><p>Pressure washers, pumps, saws, generators, tampers, drain cleaners, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/party/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — party.jpg</span><img src="https://joeconner44.github.io/atha-rental-website/images/party.jpg" alt="Party Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo — party.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/party.jpg" alt="Party Equipment" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Party Equipment</h3><p>Tables, chairs, dunking booths, popcorn machines, snow cone machines, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
     </div>
@@ -427,7 +429,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><img src="https://joeconner44.github.io/atha-rental-website/images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
+    <div class="footer-brand"><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
     <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/dumpsters/">Dumpsters</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/heavy-equipment/">Heavy Equipment</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/other/">Other Equipment</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/rentals/party/">Party Equipment</a></li></ul></div>
     <!-- <div class="footer-col"><h5>Company</h5><ul><li><a href="https://joeconner44.github.io/atha-rental-website/about/#team">Our Team</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/about/#mission">Our Mission</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/about/#values">Our Values</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/blog/">Equipment 101</a></li></ul></div> -->
     <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="/cdn-cgi/l/email-protection#e18095898084909488918c848f9593848f95808da19880898e8ecf828e8c">Email Us</a></li><li><a href="https://goo.gl/maps/4B25SZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="https://joeconner44.github.io/atha-rental-website/contact/">Hours &amp; Location</a></li></ul></div>
