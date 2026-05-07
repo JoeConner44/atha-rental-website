@@ -407,6 +407,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     /* services grid */
     #services { background: var(--warm-gray); }
     .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 700px) { .svc-grid { grid-template-columns: 1fr; } }
     .svc-card {
       background: var(--warm-white); border-radius: 10px; overflow: hidden;
       text-decoration: none; color: inherit;
