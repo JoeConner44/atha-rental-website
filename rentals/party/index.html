@@ -93,6 +93,8 @@ nav {
   font-weight: 600 !important;
 }
 .nav-cta:hover { background: var(--red-light) !important; }
+    .nav-call { display: none; background: var(--red) !important; color: var(--cream) !important; padding: .55rem 1.3rem !important; border-radius: 4px !important; font-weight: 600 !important; font-size: .88rem !important; text-decoration: none !important; white-space: nowrap !important; }
+    @media (max-width: 860px) { .nav-cta { display: none !important; } .nav-call { display: inline-flex !important; align-items: center; gap: .4rem; } }
 .nav-portal { background: var(--cream) !important; color: var(--dark) !important; padding: .55rem 1.3rem !important; border-radius: 4px !important; font-weight: 700 !important; font-size: .88rem !important; letter-spacing: .04em !important; text-decoration: none !important; white-space: nowrap !important; transition: background .2s !important; line-height: inherit !important; display: inline-flex !important; align-items: center !important; }
 .nav-portal:hover { background: var(--cream-dim) !important; border-color: var(--cream-dim) !important; color: var(--dark) !important; }
 
@@ -338,7 +340,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
 </style>
   <style>
-    .party-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .party-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
     .party-card { background: var(--warm-white); border: 1.5px solid var(--border); border-radius: 10px; padding: 1.5rem; text-align: center; transition: border-color .2s, box-shadow .2s; display: flex; flex-direction: column; justify-content: center; gap: .5rem; }
     .party-card:hover { border-color: var(--red); box-shadow: 0 4px 20px rgba(161,43,49,.1); }
     .party-card-name { font-size: 1.05rem; color: var(--dark); font-weight: 700; line-height: 1.3; }
@@ -373,14 +375,14 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 <section class="section">
   <div class="section-inner">
     <div class="party-grid">
-      <div class="party-card reveal"><div class="party-card-name">Dunking Booth</div><div class="party-card-price"><strong>$175</strong>/day</div></div>
-      <div class="party-card reveal"><div class="party-card-name">Folding Chairs<br/><small style="font-size:.8rem;color:var(--mid-gray);font-weight:400;">Black or White</small></div><div class="party-card-price"><strong>$1.25</strong>/chair<br/><span style="font-size:.82rem;">$1.00/chair (100+)</span></div></div>
-      <div class="party-card reveal"><div class="party-card-name">60" Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card reveal"><div class="party-card-name">8ft Banquet Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card reveal"><div class="party-card-name">High-Top Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
-      <div class="party-card reveal"><div class="party-card-name">Popcorn Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-      <div class="party-card reveal"><div class="party-card-name">Snow Cone Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
-      <div class="party-card reveal"><div class="party-card-name">Cotton Candy Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">Dunking Booth</div><div class="party-card-price"><strong>$175</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">Folding Chairs<br/><small style="font-size:.8rem;color:var(--mid-gray);font-weight:400;">Black or White</small></div><div class="party-card-price"><strong>$1.25</strong>/chair<br/><span style="font-size:.82rem;">$1.00/chair (100+)</span></div></div>
+      <div class="price-card reveal"><div class="party-card-name">60" Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">8ft Banquet Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">High-Top Round Table</div><div class="party-card-price"><strong>$10</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">Popcorn Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">Snow Cone Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
+      <div class="price-card reveal"><div class="party-card-name">Cotton Candy Machine</div><div class="party-card-price"><strong>$45</strong>/day</div></div>
     </div>
   </div>
 </section>

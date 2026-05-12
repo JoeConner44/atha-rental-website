@@ -93,6 +93,8 @@ nav {
   font-weight: 600 !important;
 }
 .nav-cta:hover { background: var(--red-light) !important; }
+    .nav-call { display: none; background: var(--red) !important; color: var(--cream) !important; padding: .55rem 1.3rem !important; border-radius: 4px !important; font-weight: 600 !important; font-size: .88rem !important; text-decoration: none !important; white-space: nowrap !important; }
+    @media (max-width: 860px) { .nav-cta { display: none !important; } .nav-call { display: inline-flex !important; align-items: center; gap: .4rem; } }
 .nav-portal { background: var(--cream) !important; color: var(--dark) !important; padding: .55rem 1.3rem !important; border-radius: 4px !important; font-weight: 700 !important; font-size: .88rem !important; letter-spacing: .04em !important; text-decoration: none !important; white-space: nowrap !important; transition: background .2s !important; line-height: inherit !important; display: inline-flex !important; align-items: center !important; }
 .nav-portal:hover { background: var(--cream-dim) !important; border-color: var(--cream-dim) !important; color: var(--dark) !important; }
 
@@ -338,7 +340,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 
 </style>
   <style>
-    .toilet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 320px)); gap: 1.5rem; margin-bottom: 2rem; justify-content: start; }
+    .toilet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem; }
     @media (max-width: 700px) { .toilet-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
