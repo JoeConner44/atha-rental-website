@@ -343,7 +343,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
-    @media (max-width: 700px) { .cat-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .cat-grid { grid-template-columns: 1fr !important; } }
     .cat-card {
       background: var(--warm-white);
       border: 1.5px solid var(--border);
@@ -401,30 +401,36 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       <h2 class="section-title">What Do You Need?</h2>
       <p class="section-body" style="margin:0.5rem auto 0;">Click any category below to see the full list of equipment and pricing.</p>
     </div>
-    <div class="cat-grid">
+    <div class="cat-grid" style="grid-template-columns:repeat(3,1fr);">
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/dumpsters/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — dumpsters.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/dumpsters.jpg" alt="Dumpsters" onerror="this.style.display='none'"/></div>
-        <div class="cat-body"><h3>Dumpsters</h3><p>20 &amp; 30 yard roll-off dumpsters for cleanouts, renovations, and construction. Flat-rate pricing.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/dumpsters.jpg" alt="Dumpsters" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Dumpsters</h3><p>20 &amp; 30 yard roll-off dumpsters for cleanouts, renovations, and construction. Flexible pricing.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/toilets/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — toilets.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/toilets.jpg" alt="Toilets" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/toilets.jpg" alt="Toilets &amp; Sanitation" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Toilets &amp; Sanitation</h3><p>Portable toilets, holding tanks, and hand washing stations for job sites and events.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/heavy-equipment/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — heavy-equipment.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/heavy-equipment.jpg" alt="Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/heavy-equipment.jpg" alt="Equipment" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Equipment</h3><p>Skid steers, excavators, lifts, log splitters, concrete buggies, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
+    </div>
+    <div class="cat-grid" style="grid-template-columns:repeat(4,1fr);margin-top:1.5rem;">
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/lawn-garden/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — lawn-garden.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/lawn-garden.jpg" alt="Lawn and Garden" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/lawn-garden.jpg" alt="Lawn &amp; Garden" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Lawn &amp; Garden</h3><p>Walk behind aerators, tillers, dethatchers, sod rollers, and blowers.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
-      <a href="https://joeconner44.github.io/atha-rental-website/rentals/other/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — other.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/other.jpg" alt="Other Equipment" onerror="this.style.display='none'"/></div>
-        <div class="cat-body"><h3>Other Equipment</h3><p>Pressure washers, pumps, saws, generators, tampers, drain cleaners, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      <a href="https://joeconner44.github.io/atha-rental-website/rentals/flooring/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/flooring.jpg" alt="Flooring Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Flooring Equipment</h3><p>Tile saws, floor sanders, drum sanders, carpet stretchers, knee kickers, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="https://joeconner44.github.io/atha-rental-website/rentals/party/" class="cat-card reveal">
-        <div class="cat-img"><span class="cat-img-placeholder">Add photo — party.jpg</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/party.jpg" alt="Party Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/party.jpg" alt="Party Equipment" onerror="this.style.display='none'"/></div>
         <div class="cat-body"><h3>Party Equipment</h3><p>Tables, chairs, dunking booths, popcorn machines, snow cone machines, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      </a>
+      <a href="https://joeconner44.github.io/atha-rental-website/rentals/other/" class="cat-card reveal">
+        <div class="cat-img"><span class="cat-img-placeholder">Add photo</span><img loading="lazy" src="https://joeconner44.github.io/atha-rental-website/images/other.jpg" alt="Other Equipment" onerror="this.style.display='none'"/></div>
+        <div class="cat-body"><h3>Other Equipment</h3><p>Pressure washers, pumps, saws, generators, tampers, drain cleaners, and more.</p><span class="cat-link">View Pricing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
     </div>
   </div>
