@@ -1,0 +1,18 @@
+# Atha Equipment Rental — 301 Redirects
+# Old URL → New URL (Netlify format)
+
+/dumpster-rental                    /rentals/dumpsters/             301
+/equipment                          /rentals/heavy-equipment/       301
+/flooring-equipment                 /rentals/flooring/              301
+/Lawn-and-Garden-Equipment          /rentals/lawn-garden/           301
+/lawn-and-garden-equipment          /rentals/lawn-garden/           301
+/other-equipment                    /rentals/other/                 301
+/party-event-rental-equipment       /rentals/party/                 301
+/toilets-holding-tanks              /rentals/toilets/               301
+/hours-and-location                 /contact/                       301
+/blog                               /blog/                          301
+/service-areas                      /                               301
+/media-room                         /blog/                          301
+
+# Catch-all: send anything unrecognised to homepage
+/*                                  /                               200
