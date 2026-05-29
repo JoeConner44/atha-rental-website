@@ -13,6 +13,9 @@
 /blog                               /blog/                          301
 /service-areas                      /                               301
 /media-room                         /blog/                          301
-
-# Catch-all: send anything unrecognised to homepage
-/*                                  /                               200
+/locations                          /contact/                       301
+/locations/                         /contact/                       301
+/products-page/tables               /rentals/party/                 301
+/products-page/tables/              /rentals/party/                 301
+/products-page/chairs               /rentals/party/                 301
+/products-page/chairs/              /rentals/party/                 301
