@@ -1,10 +1,10 @@
 # Atha Equipment Rental — 301 Redirects
 # Old URL → New URL (Netlify format)
-
-# Canonical host — force non-www → www (HTTPS is forced by Netlify automatically)
-http://atharental.com/*     https://www.atharental.com/:splat   301!
-https://atharental.com/*    https://www.atharental.com/:splat   301!
-http://www.atharental.com/* https://www.atharental.com/:splat   301!
+#
+# NOTE: Host canonicalization (apex <-> www) and HTTPS are handled by Netlify's
+# primary-domain setting in the dashboard. Do NOT add apex->www rules here —
+# they conflict with Netlify's own primary-domain redirect and cause an
+# infinite redirect loop ("too many redirects").
 
 /dumpster-rental                    /rentals/dumpsters/             301
 /equipment                          /rentals/heavy-equipment/       301
