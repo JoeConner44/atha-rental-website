@@ -1,6 +1,11 @@
 # Atha Equipment Rental — 301 Redirects
 # Old URL → New URL (Netlify format)
 
+# Canonical host — force non-www → www (HTTPS is forced by Netlify automatically)
+http://atharental.com/*     https://www.atharental.com/:splat   301!
+https://atharental.com/*    https://www.atharental.com/:splat   301!
+http://www.atharental.com/* https://www.atharental.com/:splat   301!
+
 /dumpster-rental                    /rentals/dumpsters/             301
 /equipment                          /rentals/heavy-equipment/       301
 /flooring-equipment                 /rentals/flooring/              301
