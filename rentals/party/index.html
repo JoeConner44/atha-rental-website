@@ -365,6 +365,18 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-SZSDRP0Z6K');
+    gtag('config', 'AW-18089447364');
+
+    /* Google Ads / GA4 — track phone-call clicks as a conversion.
+       The GA4 event fires now (import it as a conversion in Google Ads, or
+       paste your Ads conversion label below to also fire it directly). */
+    var AW_PHONE_CONVERSION_LABEL = ''; /* e.g. 'AW-18089447364/AbCdEf…' from Google Ads */
+    document.addEventListener('click', function(e){
+      var a = e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+      if(!a) return;
+      gtag('event', 'phone_call_click', { transport_type: 'beacon' });
+      if(AW_PHONE_CONVERSION_LABEL){ gtag('event', 'conversion', { send_to: AW_PHONE_CONVERSION_LABEL }); }
+    });
   </script>
 <script type="application/ld+json">
 {
