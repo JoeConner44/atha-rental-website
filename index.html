@@ -22,9 +22,12 @@
   <meta name="twitter:title" content="Atha Equipment Rental | Monroe, GA"/>
   <meta name="twitter:description" content="Family-owned equipment rental in Monroe, GA. Dumpsters, heavy equipment, portable toilets, lawn tools, and party rentals. Serving Walton County since 2003."/>
   <meta name="twitter:image" content="https://www.atharental.com/images/og-default.jpg"/>
+  <link rel="preload" as="image" href="https://www.atharental.com/images/hero-bg.jpg" fetchpriority="high"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap&display=swap" rel="stylesheet"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/></noscript>
   <style>
 /* ============================================================
    ATHA EQUIPMENT RENTAL — Global Stylesheet
@@ -391,7 +394,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     /* hero logo */
     .hero-logo {
       width: 220px; margin: 0 auto 1.6rem;
-      opacity: 0; animation: fadeUp .8s .1s forwards;
+      animation: fadeUp .8s .1s forwards;
       filter: drop-shadow(0 4px 24px rgba(0,0,0,.5));
     }
     .hero-eyebrow {
@@ -399,35 +402,35 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
       letter-spacing: .18em; text-transform: uppercase;
       color: var(--cream); border: 1px solid rgba(252,248,179,.45);
       padding: .35rem 1rem; border-radius: 2px; margin-bottom: 1.4rem;
-      opacity: 0; animation: fadeUp .7s .2s forwards;
+      animation: fadeUp .7s .2s forwards;
     }
     #hero h1 {
       font-size: clamp(2.8rem, 7vw, 5.2rem);
       color: var(--warm-white); line-height: 1.08; max-width: 820px;
-      opacity: 0; animation: fadeUp .8s .45s forwards;
+      animation: fadeUp .8s .45s forwards;
     }
     #hero h1 em { color: var(--cream); font-style: normal; }
     .hero-sub {
       margin-top: 1.4rem; font-size: clamp(1rem, 2vw, 1.18rem);
       color: rgba(253,250,243,.72); max-width: 560px; line-height: 1.75;
       text-align: center; margin-left: auto; margin-right: auto;
-      opacity: 0; animation: fadeUp .8s .65s forwards;
+      animation: fadeUp .8s .65s forwards;
     }
     .hero-motto {
       display: inline-block; margin-top: 1rem;
       font-size: .88rem; font-style: italic;
-      color: var(--cream); opacity: 0; animation: fadeUp .8s .75s forwards;
+      color: var(--cream); animation: fadeUp .8s .75s forwards;
     }
     .hero-actions {
       display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-      margin-top: 2.2rem; opacity: 0; animation: fadeUp .8s .85s forwards;
+      margin-top: 2.2rem; animation: fadeUp .8s .85s forwards;
     }
     .hero-phone {
       margin-top: 2rem; font-size: .9rem; color: rgba(192,180,158,.8);
-      letter-spacing: .04em; opacity: 0; animation: fadeUp .8s 1s forwards;
+      letter-spacing: .04em; animation: fadeUp .8s 1s forwards;
     }
     .hero-phone a { color: var(--cream); text-decoration: none; font-weight: 700; font-size: 1.15rem; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp { from { transform: translateY(12px); } to { transform: translateY(0); } }
 
     /* services grid */
     #services { background: var(--warm-gray); }
@@ -635,10 +638,10 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
-    <img src="https://www.atharental.com/images/hero-bg.jpg" alt="Atha Equipment Rental"/>
+    <img src="https://www.atharental.com/images/hero-bg.jpg" alt="" width="770" height="311" fetchpriority="high" decoding="async"/>
   </div>
   <div class="hero-content">
-    <img src="https://www.atharental.com/images/logo.png" alt="Atha Equipment Rental" class="hero-logo"/>
+    <img src="https://www.atharental.com/images/logo.png" alt="Atha Equipment Rental" class="hero-logo" width="220" height="202" fetchpriority="high"/>
     <span class="hero-eyebrow">Monroe, Georgia &nbsp;·&nbsp; Family Owned Since 2003</span>
     <h1>Your <em>Trusted Local</em><br/>Rental Partner</h1>
     <p class="hero-sub">Serving Walton County and neighboring counties with dumpsters, equipment, portable toilets, lawn tools, and party rentals.</p>
