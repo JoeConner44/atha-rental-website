@@ -22,11 +22,20 @@
   <meta name="twitter:title" content="Equipment 101 Blog | Atha Equipment Rental"/>
   <meta name="twitter:description" content="Tips, guides, and how-tos from the team at Atha Equipment Rental in Monroe, GA. Learn about dumpsters, lawn equipment, heavy machines, and more."/>
   <meta name="twitter:image" content="https://www.atharental.com/images/og-default.jpg"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/></noscript>
+  <style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/DMSans.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700 900;font-display:swap;src:url(/fonts/PlayfairDisplay.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:700;font-display:swap;src:url(/fonts/PlayfairDisplay-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/DMSans.woff2" crossorigin/>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/PlayfairDisplay.woff2" crossorigin/>
+  <noscript><style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/DMSans.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700 900;font-display:swap;src:url(/fonts/PlayfairDisplay.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:700;font-display:swap;src:url(/fonts/PlayfairDisplay-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/DMSans.woff2" crossorigin/>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/PlayfairDisplay.woff2" crossorigin/></noscript>
   <style>
 /* ============================================================
    ATHA EQUIPMENT RENTAL — Global Stylesheet
@@ -392,7 +401,13 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
     @media (max-width: 780px) { .featured-post { grid-template-columns: 1fr; } .featured-img { min-height: 220px; } }
   </style>
 <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZSDRP0Z6K"></script>
+  
+  <script>
+    (function(){var l=false;function go(){if(l)return;l=true;var t=document.createElement('script');t.async=true;t.src='https://www.googletagmanager.com/gtag/js?id=G-SZSDRP0Z6K';document.head.appendChild(t);}
+    function idle(){(window.requestIdleCallback||function(c){setTimeout(c,1)})(go,{timeout:3000});}
+    if(document.readyState==='complete')idle();else addEventListener('load',idle);
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){addEventListener(e,go,{once:true,passive:true});});})();
+  </script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -538,8 +553,7 @@ footer { background: var(--dark); color: #7a6e5e; padding: 4rem 5% 2rem; }
 <footer>
   <div class="footer-top">
     <div class="footer-brand"><img loading="lazy" src="https://www.atharental.com/images/logo.png" alt="Atha Rental"/><p>Family-owned equipment rental serving Walton County and neighboring counties since 2003. Friendly Customer Service Guaranteed.</p></div>
-    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="https://www.atharental.com/rentals/dumpsters/">Dumpsters</a></li><li><a href="https://www.atharental.com/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="https://www.atharental.com/rentals/heavy-equipment/">Equipment</a></li><li><a href="https://www.atharental.com/rentals/lawn-garden/">Lawn &amp; Garden</a>
-        <a href="https://www.atharental.com/rentals/flooring/">Flooring Equipment</a></li><li><a href="https://www.atharental.com/rentals/other/">Other Equipment</a></li><li><a href="https://www.atharental.com/rentals/party/">Party Equipment</a></li></ul></div>
+    <div class="footer-col"><h5>Rental Items</h5><ul><li><a href="https://www.atharental.com/rentals/dumpsters/">Dumpsters</a></li><li><a href="https://www.atharental.com/rentals/toilets/">Toilets &amp; Sanitation</a></li><li><a href="https://www.atharental.com/rentals/heavy-equipment/">Equipment</a></li><li><a href="https://www.atharental.com/rentals/lawn-garden/">Lawn &amp; Garden</a></li><li><a href="https://www.atharental.com/rentals/flooring/">Flooring Equipment</a></li><li><a href="https://www.atharental.com/rentals/other/">Other Equipment</a></li><li><a href="https://www.atharental.com/rentals/party/">Party Equipment</a></li></ul></div>
     <!-- <div class="footer-col"><h5>Company</h5><ul><li><a href="https://www.atharental.com/about/#team">Our Team</a></li><li><a href="https://www.atharental.com/about/#mission">Our Mission</a></li><li><a href="https://www.atharental.com/about/#values">Our Values</a></li><li><a href="https://www.atharental.com/blog/">Equipment 101</a></li></ul></div> -->
     <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:7702076041">(770) 207-6041</a></li><li><a href="/cdn-cgi/l/email-protection#0c6d78646d697d79657c616962787e6962786d604c756d646363226f6361">Email Us</a></li><li><a href="https://goo.gl/maps/4B25ZKKHK4zaw7TA" target="_blank">519 E. Spring St., Monroe, GA</a></li><li><a href="https://www.atharental.com/contact/">Hours &amp; Location</a></li></ul></div>
   </div>
